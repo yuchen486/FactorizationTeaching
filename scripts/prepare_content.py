@@ -2,7 +2,7 @@
 import json,pathlib,html,shutil
 R=pathlib.Path(__file__).resolve().parents[1]
 def write(p,s):
- p=R/p;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(s,encoding='utf-8')
+ p=R/p;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(s,encoding='utf-8',newline='\n')
 segments=[
  ('简便计算',60,['25×7＋25×3','怎样计算更简便？'],['25×7＋25×3＝25×(7＋3)＝250','共同的25可以提出来'],
  '同学们，请看这道计算题：25乘7加25乘3。先想一想，怎样算更简便？【停顿5秒】我们可以先把7和3相加，再乘25，结果是250。这里用了乘法分配律。观察算式，两项中都有什么？【预设：25】我们把共同的25提到括号外，括号里面留下7加3。接下来，把这样的想法用到含字母的式子中。'),

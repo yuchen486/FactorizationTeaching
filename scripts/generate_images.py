@@ -24,7 +24,7 @@ def run(page):
                 with urllib.request.urlopen(item['url'],timeout=120) as response: raw=response.read()
             out.parent.mkdir(parents=True,exist_ok=True);out.write_bytes(raw)
             log={'page_id':page['page_id'],'attempt':attempt+1,'seconds':round(time.time()-start,2),'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest(),'completed_at':datetime.datetime.now().astimezone().isoformat(),'source':'configured_upstream_api','model_label':'gpt-image-2.5'}
-            (ROOT/'assets/records'/f"{page['page_id']}.json").write_text(json.dumps(log,ensure_ascii=False,indent=2),encoding='utf-8')
+            (ROOT/'assets/records'/f"{page['page_id']}.json").write_text(json.dumps(log,ensure_ascii=False,indent=2),encoding='utf-8',newline='\n')
             print(json.dumps(log),flush=True);return
         except Exception as exc:
             print(json.dumps({'page_id':page['page_id'],'attempt':attempt+1,'error_type':type(exc).__name__,'http_status':getattr(exc,'code',None)}),flush=True)

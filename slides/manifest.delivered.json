@@ -46,7 +46,7 @@
           "prompt": {
             "path": "slides/prompts/L01-S01A-native-v1.md",
             "version": "native-v1",
-            "sha256": "a26d628b6ca5baa7fbcfbd5e6c2151bda8686f9fdcf562abeeab802abca03aac"
+            "sha256": "47c3a6e7cce8761770e8906a301d900c5864d4ea27cd937a046a309741b16f18"
           },
           "quality": {
             "rating": "accept",
@@ -121,7 +121,7 @@
           "prompt": {
             "path": "slides/prompts/L01-S01B-native-v1.md",
             "version": "native-v1",
-            "sha256": "929f01679c4b6e2be505a820d3f6d6157935ec8860c4d681b7fd8544cec68225"
+            "sha256": "9c601fcde4b73a622803fa7b5cb9ec7befd18773b9abc615ef4caabeff827227"
           },
           "quality": {
             "rating": "accept",
@@ -196,7 +196,7 @@
           "prompt": {
             "path": "slides/prompts/L01-S02A-native-v1.md",
             "version": "native-v1",
-            "sha256": "8c9b2f8a07dfc63a1269a0612d2365275ce0556f3b1e397ba0e933e6b4560163"
+            "sha256": "9f1a71c5c0b517a851ed1ae7cd52488f140a4b58d7730658996734b3c251bb6d"
           },
           "quality": {
             "rating": "accept",
@@ -346,7 +346,7 @@
           "prompt": {
             "path": "slides/prompts/L01-S03A-native-v1.md",
             "version": "native-v1",
-            "sha256": "e04054e5575de383e7fd6f2b931faf23f6c99ef3187716678200a97c767412d1"
+            "sha256": "b845d21949f6f372eb22b370b97d4e1133b53a6b5edb7510c3ab60f9a50cc4e5"
           },
           "quality": {
             "rating": "accept",
@@ -422,7 +422,7 @@
           "prompt": {
             "path": "slides/prompts/L01-S03B-native-v1.md",
             "version": "native-v1",
-            "sha256": "5164fe38ff67d3e2a184b7c9481b317161e1168ea9512eea5a68315cd1b77b18"
+            "sha256": "ee54c4a569035097eda2ea3ce307dc59269940533a78022531316a2b717f26bf"
           },
           "quality": {
             "rating": "accept",
@@ -497,7 +497,7 @@
           "prompt": {
             "path": "slides/prompts/L01-S04A-native-v1.md",
             "version": "native-v1",
-            "sha256": "9caf2eb3476c9b15fcf57da7f232dddc840072cf522d13ecda110f22ace9eae9"
+            "sha256": "98307032304d3a34134967a2687efb88ca1a87c3d7552f2bb0a5da68d11cdde6"
           },
           "quality": {
             "rating": "accept",
@@ -572,7 +572,7 @@
           "prompt": {
             "path": "slides/prompts/L01-S04B-native-v1.md",
             "version": "native-v1",
-            "sha256": "a3acac2d91a633acb49ec77099824daae081c45a571497a3de17c2c4de7d49b8"
+            "sha256": "249a43fa8f8e2dc845f8138d27946415bb6c125f08a65319cd9e7f3ea79216ee"
           },
           "quality": {
             "rating": "accept",
@@ -647,7 +647,7 @@
           "prompt": {
             "path": "slides/prompts/L01-S05A-native-v1.md",
             "version": "native-v1",
-            "sha256": "133796022abd298e44eb2536168a7fd3dd79b73df12610717e4f90556186edbd"
+            "sha256": "c01a562cc4c11fa1364b4be03afbebfa144cd80d8e0b02e1430f2dc605f77365"
           },
           "quality": {
             "rating": "accept",
@@ -722,7 +722,7 @@
           "prompt": {
             "path": "slides/prompts/L01-S05B-native-v1.md",
             "version": "native-v1",
-            "sha256": "f2fb4bcff7124468e971f058eb0b4a52c32ae49cc9acaaa4c1f2b75969886ee7"
+            "sha256": "7fdb36c787422bcef0e45d27d27665a5713d6d96a4044a712996e70920c09804"
           },
           "quality": {
             "rating": "accept",
@@ -797,7 +797,7 @@
           "prompt": {
             "path": "slides/prompts/L01-S06A-native-v1.md",
             "version": "native-v1",
-            "sha256": "74e145902b431dc3722a4b232d4c3d08fb384a3b285a1a0e1f7071ba692149c7"
+            "sha256": "fc4f2b4baef0d1007346516b7df1eadc6c80a44ba063bf6d46f3b69ca7cc7dc0"
           },
           "quality": {
             "rating": "accept",
@@ -872,7 +872,7 @@
           "prompt": {
             "path": "slides/prompts/L01-S06B-native-v1.md",
             "version": "native-v1",
-            "sha256": "cda324867eaa0e77c8e0f8714b23cab4439ac2ccbd3bc53b22742dc89b46da9c"
+            "sha256": "2258de3883abc40081248c4651a02e450dd892511ea685eebd5960678ba4677a"
           },
           "quality": {
             "rating": "accept",
@@ -1022,7 +1022,7 @@
           "prompt": {
             "path": "slides/prompts/L01-S07B-native-v1.md",
             "version": "native-v1",
-            "sha256": "2c05a1b816309063ad935e1e3d3c742a1a4dda686e517b318f685639b91b2ab6"
+            "sha256": "704832c8741755077c805f64f254c6415eeade77558e56f2b3dbbe210e0358f0"
           },
           "quality": {
             "rating": "accept",
