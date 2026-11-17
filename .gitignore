@@ -1,0 +1,26 @@
+# Local work and environments
+work/
+.venv/
+venv/
+node_modules/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.cache/
+
+# Credentials and machine-specific settings
+.env
+.env.*
+!.env.example
+keys.env
+credential.xml
+*.pem
+*.key
+
+# Office locks and temporary files
+~$*
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+desktop.ini
