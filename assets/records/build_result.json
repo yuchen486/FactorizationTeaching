@@ -1,0 +1,40 @@
+{
+  "schema_version": "image-first-pptx-build.v1",
+  "created_at": "2026-11-17T16:15:00.998Z",
+  "project_id": "L01",
+  "page_count": 14,
+  "spoken_seconds": 600,
+  "status": "structural_validation_passed_rendered_visual_review_pending",
+  "source_manifest": {
+    "path": "slides/manifest.json",
+    "sha256": "ee8d49b15d21f11986f2f5ba44632548a986f16d0319a1a9948620ca5c982c2e"
+  },
+  "pptx": {
+    "path": "outputs/L01-课件.pptx",
+    "sha256": "0c37fc9918a004c834e7743a223ded42e82a58d4bb9426965ba12ab0393ced72"
+  },
+  "official_finalizer": {
+    "receipt": "work/pptx-v1/final.validation.json",
+    "sha256": "580071cb8685a0e41bb93a7dd5ce87ab8ab13a3362a90b91d18630eedf07e109"
+  },
+  "reimport": {
+    "passed": true,
+    "page_count": 14,
+    "rendered_pages": 14
+  },
+  "embedded_bytes_and_notes": {
+    "report": "work/pptx-v1/manifest.pptx-integrity.json",
+    "passed": true
+  },
+  "render_index": "work/pptx-v1/render-index.html",
+  "manifest_with_final_renders": "work/pptx-v1/manifest.with-final-renders.json",
+  "speaker_cards": [
+    "work/pptx-v1/speaker-cards.json",
+    "work/pptx-v1/speaker-cards.md"
+  ],
+  "visual_qa": {
+    "status": "pending",
+    "reviewed_page_ids": []
+  },
+  "typography_check": "Raster glyphs require visual review; exact font files are not verified by packaging."
+}

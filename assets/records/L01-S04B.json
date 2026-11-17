@@ -1,0 +1,10 @@
+{
+  "page_id": "L01-S04B",
+  "attempt": 1,
+  "seconds": 50.09,
+  "bytes": 1783926,
+  "sha256": "9c4b5d58b83632bac8796cef5f9492a1fb7a908b6b1713bd04dd30568c218bb8",
+  "completed_at": "2026-11-18T00:06:16.773752+08:00",
+  "source": "configured_upstream_api",
+  "model_label": "gpt-image-2.5"
+}

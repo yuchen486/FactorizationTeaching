@@ -1,0 +1,42 @@
+{
+  "pptx_sha256": "0c37fc9918a004c834e7743a223ded42e82a58d4bb9426965ba12ab0393ced72",
+  "slides": 14,
+  "seconds": 600,
+  "visual_review": "14 reimported slide renders reviewed individually at 1920x1080 simulation",
+  "ui": {
+    "passed": true,
+    "checks": [
+      "HTTP project prefix",
+      "all five pages",
+      "14 image decodes in order",
+      "fullscreen",
+      "hide and restore controls",
+      "PPTX download"
+    ],
+    "errors": []
+  },
+  "local_ui": {
+    "passed": true,
+    "engine": "Chromium 1243",
+    "viewports": [
+      "1440x1000",
+      "390x844",
+      "1920x1080"
+    ],
+    "checks": [
+      "file scheme",
+      "board forward/reset/end/keyboard",
+      "print terminal state",
+      "script content",
+      "mobile overflow",
+      "slide Home/End"
+    ],
+    "errors": []
+  },
+  "limits": [
+    "Actual classroom rehearsal pending",
+    "Exact raster font files unverified",
+    "PowerPoint desktop not opened"
+  ],
+  "runtime_note": "Official operation marker file absent in installed skill; official finalizer and reimport/render completed successfully."
+}
