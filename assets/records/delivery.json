@@ -1,14 +1,14 @@
 {
-  "pptx_sha256": "0c37fc9918a004c834e7743a223ded42e82a58d4bb9426965ba12ab0393ced72",
-  "slides": 14,
+  "pptx_sha256": "5148366bffee46f0097f219799cde0362c791c7e54cefef821e14331527b34b2",
+  "slides": 15,
   "seconds": 600,
-  "visual_review": "14 reimported slide renders reviewed individually at 1920x1080 simulation",
+  "visual_review": "All slides visually reviewed individually after reimport at 1920×1080.",
   "ui": {
     "passed": true,
     "checks": [
       "HTTP project prefix",
       "all five pages",
-      "14 image decodes in order",
+      "15 image decodes in order",
       "fullscreen",
       "hide and restore controls",
       "PPTX download"
@@ -35,8 +35,7 @@
   },
   "limits": [
     "Actual classroom rehearsal pending",
-    "Exact raster font files unverified",
-    "PowerPoint desktop not opened"
+    "PowerPoint desktop and WPS not opened"
   ],
-  "runtime_note": "Official operation marker file absent in installed skill; official finalizer and reimport/render completed successfully."
+  "runtime_note": "Operation marker module unavailable in the installed skill. Official finalizer, reimport and rendering passed."
 }

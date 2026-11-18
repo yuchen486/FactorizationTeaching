@@ -1,36 +1,36 @@
 {
   "schema_version": "image-first-pptx-build.v1",
-  "created_at": "2026-11-17T16:15:00.998Z",
+  "created_at": "2026-11-18T00:58:22.648Z",
   "project_id": "L01",
-  "page_count": 14,
+  "page_count": 15,
   "spoken_seconds": 600,
   "status": "structural_validation_passed_rendered_visual_review_pending",
   "source_manifest": {
     "path": "slides/manifest.json",
-    "sha256": "ee8d49b15d21f11986f2f5ba44632548a986f16d0319a1a9948620ca5c982c2e"
+    "sha256": "4897a38276b3b47482c077f2ca4d1d9af62a8eb2b2e33d7a660c875da5bccf39"
   },
   "pptx": {
-    "path": "outputs/L01-课件.pptx",
-    "sha256": "0c37fc9918a004c834e7743a223ded42e82a58d4bb9426965ba12ab0393ced72"
+    "path": "work/revision-2-input/L01-课件-v2.pptx",
+    "sha256": "5148366bffee46f0097f219799cde0362c791c7e54cefef821e14331527b34b2"
   },
   "official_finalizer": {
-    "receipt": "work/pptx-v1/final.validation.json",
-    "sha256": "580071cb8685a0e41bb93a7dd5ce87ab8ab13a3362a90b91d18630eedf07e109"
+    "receipt": "work/pptx-v2/final.validation.json",
+    "sha256": "cbd2cfcbf8ca2021bb91b0504ae81a53d2d1d030bdd3a179972d31cbf9c0f47b"
   },
   "reimport": {
     "passed": true,
-    "page_count": 14,
-    "rendered_pages": 14
+    "page_count": 15,
+    "rendered_pages": 15
   },
   "embedded_bytes_and_notes": {
-    "report": "work/pptx-v1/manifest.pptx-integrity.json",
+    "report": "work/pptx-v2/manifest.pptx-integrity.json",
     "passed": true
   },
-  "render_index": "work/pptx-v1/render-index.html",
-  "manifest_with_final_renders": "work/pptx-v1/manifest.with-final-renders.json",
+  "render_index": "work/pptx-v2/render-index.html",
+  "manifest_with_final_renders": "work/pptx-v2/manifest.with-final-renders.json",
   "speaker_cards": [
-    "work/pptx-v1/speaker-cards.json",
-    "work/pptx-v1/speaker-cards.md"
+    "work/pptx-v2/speaker-cards.json",
+    "work/pptx-v2/speaker-cards.md"
   ],
   "visual_qa": {
     "status": "pending",
