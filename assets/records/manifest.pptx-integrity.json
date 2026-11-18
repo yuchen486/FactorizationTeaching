@@ -11,99 +11,105 @@
         "page_number": 1,
         "page_id": "L01-S01A",
         "status": "adopted",
-        "adopted_candidate_id": "L01-S01A-native"
+        "adopted_candidate_id": "L01-S01A-api-r1"
       },
       {
         "page_number": 2,
         "page_id": "L01-S01B",
         "status": "adopted",
-        "adopted_candidate_id": "L01-S01B-native"
+        "adopted_candidate_id": "L01-S01B-api-r2"
       },
       {
         "page_number": 3,
         "page_id": "L01-S02A",
         "status": "adopted",
-        "adopted_candidate_id": "L01-S02A-native"
+        "adopted_candidate_id": "L01-S02A-api-r1"
       },
       {
         "page_number": 4,
         "page_id": "L01-S02B",
         "status": "adopted",
-        "adopted_candidate_id": "L01-S02B-native"
+        "adopted_candidate_id": "L01-S02B-api-r1"
       },
       {
         "page_number": 5,
         "page_id": "L01-S03A",
         "status": "adopted",
-        "adopted_candidate_id": "L01-S03A-native"
+        "adopted_candidate_id": "L01-S03A-api-r1"
       },
       {
         "page_number": 6,
         "page_id": "L01-S03B",
         "status": "adopted",
-        "adopted_candidate_id": "L01-S03B-native"
+        "adopted_candidate_id": "L01-S03B-api-r2"
       },
       {
         "page_number": 7,
         "page_id": "L01-S04A",
         "status": "adopted",
-        "adopted_candidate_id": "L01-S04A-native"
+        "adopted_candidate_id": "L01-S04A-chrome"
       },
       {
         "page_number": 8,
         "page_id": "L01-S04B",
         "status": "adopted",
-        "adopted_candidate_id": "L01-S04B-native"
+        "adopted_candidate_id": "L01-S04B-chrome"
       },
       {
         "page_number": 9,
         "page_id": "L01-S05A",
         "status": "adopted",
-        "adopted_candidate_id": "L01-S05A-native"
+        "adopted_candidate_id": "L01-S05A-api-r1"
       },
       {
         "page_number": 10,
         "page_id": "L01-S05B",
         "status": "adopted",
-        "adopted_candidate_id": "L01-S05B-native"
+        "adopted_candidate_id": "L01-S05B-api-r2"
       },
       {
         "page_number": 11,
         "page_id": "L01-S06A",
         "status": "adopted",
-        "adopted_candidate_id": "L01-S06A-native"
+        "adopted_candidate_id": "L01-S06A-api-r1"
       },
       {
         "page_number": 12,
         "page_id": "L01-S06B",
         "status": "adopted",
-        "adopted_candidate_id": "L01-S06B-native"
+        "adopted_candidate_id": "L01-S06B-api-r2"
       },
       {
         "page_number": 13,
         "page_id": "L01-S07A",
         "status": "adopted",
-        "adopted_candidate_id": "L01-S07A-native"
+        "adopted_candidate_id": "L01-S07A-api-r1"
       },
       {
         "page_number": 14,
         "page_id": "L01-S07B",
         "status": "adopted",
-        "adopted_candidate_id": "L01-S07B-native"
+        "adopted_candidate_id": "L01-S07B-chrome"
+      },
+      {
+        "page_number": 15,
+        "page_id": "L01-S08A",
+        "status": "adopted",
+        "adopted_candidate_id": "L01-S08A-api-r2"
       }
     ],
-    "candidate_files": 14,
-    "final_render_files": 14,
+    "candidate_files": 15,
+    "final_render_files": 15,
     "total_seconds": 600,
     "target_seconds": 600,
     "pptx": {
-      "slides": 14,
+      "slides": 15,
       "canvas_emu": [
         18288000,
         10287000
       ],
-      "notes_matched": 14,
-      "images_matched": 14
+      "notes_matched": 15,
+      "images_matched": 15
     }
   }
 }

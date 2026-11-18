@@ -12,8 +12,8 @@
 
 ## 内容修改
 
-练习编号以exercises/L01-exercises.md为准，时间表以planning/alignment-and-plan.md为准。修改时同步逐字稿、分镜、板书与网页。图片文案修改应重新生成相关整图并更新SHA与PPTX。scripts/build_site.py由现有内容重建网页，scripts/prepare_content.py会重写内容源，应修改该程序中的内容后再运行。
+练习编号以 `exercises/L01-exercises.md` 为准，时间表以 `planning/alignment-and-plan.md` 为准。v3 可见文案和插图说明见 `slides/L01-api-v3.json`。变更页面后重新出候选，逐字、逐符号检查，再更新 PPTX、HTML 和备注。`scripts/build_site.py` 可从已定稿内容重建网页。
 
 ## 图像再生成
 
-`scripts/generate_images.py` 需要调用方自行配置图像服务；已有图像、网页和 PPTX 可直接使用，不需要 API 密钥。不得提交数据库、密钥或原始认证信息。
+`scripts/generate_images.py` 使用本机 Windows 的 `openai-next-image` 渠道和系统代理。候选与生成记录保存在 `work/image-v3/`，本版的候选、提示词和验收记录随版本归档。离线使用既有 PPTX 和网页无需服务凭据。

@@ -1,0 +1,21 @@
+{
+  "id": "L01-S04A-api-r2",
+  "page_id": "L01-S04A",
+  "lane": "configured_api",
+  "model": "gpt-image-2.5",
+  "prompt": "assets/candidates/v3/prompts/L01-S04A-api-r2.md",
+  "prompt_sha256": "39a35d5febeb6866c844c0568ae6505ffca9ba10a6cb464f21bc76d1cf2eaec5",
+  "status": "downloaded",
+  "submitted_at": "2026-11-18T01:43:20.290143+00:00",
+  "http_status": 200,
+  "transport_exit": 0,
+  "completed_at": "2026-11-18T01:43:58.668937+00:00",
+  "downloaded_at": "2026-11-18T01:43:58.684256+00:00",
+  "dimensions": [
+    2048,
+    1152
+  ],
+  "sha256": "8dd7f175897160d9af23f669e857dfddc57235b957e6df500e92a1c80b99fd7d",
+  "path": "assets/candidates/v3/candidates/L01-S04A-api-r2.png",
+  "seconds": 38.41
+}

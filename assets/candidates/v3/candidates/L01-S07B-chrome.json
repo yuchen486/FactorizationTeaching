@@ -1,0 +1,20 @@
+{
+  "id": "L01-S07B-chrome",
+  "page_id": "L01-S07B",
+  "lane": "web_chatgpt",
+  "status": "downloaded",
+  "reference": "https://chatgpt.com/c/6afd0356-2668-83ea-bc55-416483c269d1",
+  "prompt": "assets/candidates/v3/prompts/L01-S07B-api-r2.md",
+  "prompt_sha256": "a52758596c4dccefdc76b7bf9c3c40f2b36b74d0594560d54e4f0de60af07f76",
+  "submitted_at": "2026-11-18T01:45:56.104Z",
+  "completed_at": "2026-11-18T01:48:29.232Z",
+  "completed_at_kind": "first_observation",
+  "downloaded_at": "2026-11-18T01:48:43.6699020Z",
+  "seconds": 153.128,
+  "dimensions": [
+    1672,
+    941
+  ],
+  "path": "assets/candidates/v3/candidates/L01-S07B-chrome.png",
+  "sha256": "548be7dd57a20d37050476d72dcb6cc3515c254f6d267e76adb870620f20d42c"
+}

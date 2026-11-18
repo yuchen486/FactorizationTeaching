@@ -1,0 +1,222 @@
+[
+  {
+    "id": "L01-S01A-api-r1",
+    "page_id": "L01-S01A",
+    "sha256": "8f1df3fd6583bbaa92b7422404dbc36f535dae90152f0cb3fabc7516c3ad6cff",
+    "passed": true,
+    "adopted": true,
+    "findings": "算式、分组数量和提问正确。文具盒是情境示意。",
+    "reviewer": "Codex visual review",
+    "reviewed_at": "2026-11-18T01:52:02.215Z"
+  },
+  {
+    "id": "L01-S01B-api-r1",
+    "page_id": "L01-S01B",
+    "sha256": "da3341722d61efa7bd9a66bdc2c1a33e41530424835140c5bd64af118c987711",
+    "passed": false,
+    "adopted": false,
+    "findings": "图示把两组都画成三盒，和算式中的 7 盒与 3 盒冲突。",
+    "reviewer": "Codex visual review",
+    "reviewed_at": "2026-11-18T01:52:02.215Z"
+  },
+  {
+    "id": "L01-S01B-api-r2",
+    "page_id": "L01-S01B",
+    "sha256": "6fab2807ea28c8e07beedc73eadaf4495c68e6c3b61a678117ce797b58c98b16",
+    "passed": true,
+    "adopted": true,
+    "findings": "三行等式逐项正确，以单个笔盒和铅笔作示意，插图与数量无冲突。",
+    "reviewer": "Codex visual review",
+    "reviewed_at": "2026-11-18T01:52:02.215Z"
+  },
+  {
+    "id": "L01-S02A-api-r1",
+    "page_id": "L01-S02A",
+    "sha256": "c5257b1cd1482d88f4eba461e767c2d9111b1d3a82418617fdc4f64600491aa6",
+    "passed": true,
+    "adopted": true,
+    "findings": "展开等式与提问正确，两块面积与右侧两加数按颜色对应。",
+    "reviewer": "Codex visual review",
+    "reviewed_at": "2026-11-18T01:52:02.215Z"
+  },
+  {
+    "id": "L01-S02B-api-r1",
+    "page_id": "L01-S02B",
+    "sha256": "718716638832e6dbb51a3c000ef7e55091a24e865a01dddecb38c96b5dfc4f9f",
+    "passed": true,
+    "adopted": true,
+    "findings": "逆向等式、定义和因式 a 正确，分块至整体方向清楚。",
+    "reviewer": "Codex visual review",
+    "reviewed_at": "2026-11-18T01:52:02.215Z"
+  },
+  {
+    "id": "L01-S03A-api-r1",
+    "page_id": "L01-S03A",
+    "sha256": "9ef7472c1c1ebf267ee8198f9bce27203d93d802ce24aa3db5a9bd6eb5ef23a0",
+    "passed": true,
+    "adopted": true,
+    "findings": "主式及两条提示正确，卡片序号为轻微辅助标注。",
+    "reviewer": "Codex visual review",
+    "reviewed_at": "2026-11-18T01:52:02.215Z"
+  },
+  {
+    "id": "L01-S03B-api-r1",
+    "page_id": "L01-S03B",
+    "sha256": "fe9ca0989cdc7f14718d6f86082845f3bd259eaa66571ad4a8bc45472a557157",
+    "passed": false,
+    "adopted": false,
+    "findings": "额外分支箭头从 3x 指向 2x、3，容易被理解为 3x 的因式拆分。",
+    "reviewer": "Codex visual review",
+    "reviewed_at": "2026-11-18T01:52:02.215Z"
+  },
+  {
+    "id": "L01-S03B-api-r2",
+    "page_id": "L01-S03B",
+    "sha256": "6c93c746d7581f435529080b273a308b15a820fd95ef137af498df2d6bfbfef9",
+    "passed": true,
+    "adopted": true,
+    "findings": "两条线索和拆写等式清晰，额外空色块只影响装饰。",
+    "reviewer": "Codex visual review",
+    "reviewed_at": "2026-11-18T01:52:02.215Z"
+  },
+  {
+    "id": "L01-S04A-api-r1",
+    "page_id": "L01-S04A",
+    "sha256": "9c9184de5b3910f02be4e29f2b66bfb548c13c2a59608d6edf918bcaba30be0e",
+    "passed": false,
+    "adopted": false,
+    "findings": "主式与除法正确，额外花括号无标签，容易把 3x 理解为两项合并后的值。",
+    "reviewer": "Codex visual review",
+    "reviewed_at": "2026-11-18T01:52:02.215Z"
+  },
+  {
+    "id": "L01-S04A-api-r2",
+    "page_id": "L01-S04A",
+    "sha256": "8dd7f175897160d9af23f669e857dfddc57235b957e6df500e92a1c80b99fd7d",
+    "passed": false,
+    "adopted": false,
+    "findings": "额外的“易错点 3x”把本题公因式标成错误提示，易误导。",
+    "reviewer": "Codex visual review",
+    "reviewed_at": "2026-11-18T01:52:02.215Z"
+  },
+  {
+    "id": "L01-S04A-chrome",
+    "page_id": "L01-S04A",
+    "sha256": "7e8b7cac91a0a7583068f574d22995cdba59285f71ac2da8cfb13a4ac20022ba",
+    "passed": true,
+    "adopted": true,
+    "findings": "两项除法与问题逐字对应，公式清晰，未提前给商或括号答案。",
+    "reviewer": "Codex visual review",
+    "reviewed_at": "2026-11-18T01:52:02.215Z"
+  },
+  {
+    "id": "L01-S04B-api-r1",
+    "page_id": "L01-S04B",
+    "sha256": "9ab527973fd4b9ab3ce37ac5228586e8c64d8e2eb60b047a6e9002fcf41a31cd",
+    "passed": false,
+    "adopted": false,
+    "findings": "两条主等式正确，附图却把检验箭头画到加号，误解分配方向。",
+    "reviewer": "Codex visual review",
+    "reviewed_at": "2026-11-18T01:52:02.215Z"
+  },
+  {
+    "id": "L01-S04B-chrome",
+    "page_id": "L01-S04B",
+    "sha256": "c0f59f20418141ae2590b776c9ee77fcdf12d8bcad3d6c8d0971a84e61bc0fbb",
+    "passed": true,
+    "adopted": true,
+    "findings": "两条等式逐符号正确，独立回转图标不改变分配关系。",
+    "reviewer": "Codex visual review",
+    "reviewed_at": "2026-11-18T01:52:02.215Z"
+  },
+  {
+    "id": "L01-S05A-api-r1",
+    "page_id": "L01-S05A",
+    "sha256": "eddc62a6248ff2950e4e4e87062b5bb0eeb408287bd0597421249a50c5daae43",
+    "passed": true,
+    "adopted": true,
+    "findings": "错例标为待判断，提问清楚，答案留到反馈页。",
+    "reviewer": "Codex visual review",
+    "reviewed_at": "2026-11-18T01:52:02.215Z"
+  },
+  {
+    "id": "L01-S05B-api-r2",
+    "page_id": "L01-S05B",
+    "sha256": "c7e1f24da5ee4a7b8dcb6e61e75db8e092252cabc881201e16d81019f11c80c6",
+    "passed": true,
+    "adopted": true,
+    "findings": "依据与正确分解均正确，圈出了第一式的 1，第二式的 1 仍清晰。",
+    "reviewer": "Codex visual review",
+    "reviewed_at": "2026-11-18T01:52:02.215Z"
+  },
+  {
+    "id": "L01-S06A-api-r1",
+    "page_id": "L01-S06A",
+    "sha256": "4a3604d4a3fdf06bd3299b84b036989644b7ca7386ce758efc042f657fc927f3",
+    "passed": true,
+    "adopted": true,
+    "findings": "检测题、负号及作答要求清楚，右侧为练习示意，未提前显示答案。",
+    "reviewer": "Codex visual review",
+    "reviewed_at": "2026-11-18T01:52:02.215Z"
+  },
+  {
+    "id": "L01-S06B-api-r1",
+    "page_id": "L01-S06B",
+    "sha256": "2549d98dc523a10cf2e3bee59c51a5429b794bf7210793556979b38ed55b708e",
+    "passed": false,
+    "adopted": false,
+    "findings": "结果与检验正确，额外分支不能清楚表达公因式乘回各商式。",
+    "reviewer": "Codex visual review",
+    "reviewed_at": "2026-11-18T01:52:02.215Z"
+  },
+  {
+    "id": "L01-S06B-api-r2",
+    "page_id": "L01-S06B",
+    "sha256": "6eed5ee7abd73f5226635f48bfc7acd48901b0d2ffe8bf227603edc7510093cd",
+    "passed": true,
+    "adopted": true,
+    "findings": "分解和乘回检验各自正确，括号内负号和商 −3 清楚。",
+    "reviewer": "Codex visual review",
+    "reviewed_at": "2026-11-18T01:52:02.215Z"
+  },
+  {
+    "id": "L01-S07A-api-r1",
+    "page_id": "L01-S07A",
+    "sha256": "02c7574577663e769f1c4b512f9b632b7421aff3e4f051736ba714105b09559d",
+    "passed": true,
+    "adopted": true,
+    "findings": "三项复述提问完整，图标作为线索，答案留到下一页。",
+    "reviewer": "Codex visual review",
+    "reviewed_at": "2026-11-18T01:52:02.215Z"
+  },
+  {
+    "id": "L01-S07B-api-r1",
+    "page_id": "L01-S07B",
+    "sha256": "ac6b93a46882d20c18074c86fcb4097603e991d8090ccbf76ddecff9b00341e1",
+    "passed": false,
+    "adopted": false,
+    "findings": "生成了超出原稿的新多字母例题，干扰 20 秒的小结和独立作业。",
+    "reviewer": "Codex visual review",
+    "reviewed_at": "2026-11-18T01:52:02.215Z"
+  },
+  {
+    "id": "L01-S07B-chrome",
+    "page_id": "L01-S07B",
+    "sha256": "548be7dd57a20d37050476d72dcb6cc3515c254f6d267e76adb870620f20d42c",
+    "passed": true,
+    "adopted": true,
+    "findings": "三步及商 1 提醒准确，双箭头向右，三个图标和步骤对应。",
+    "reviewer": "Codex visual review",
+    "reviewed_at": "2026-11-18T01:52:02.215Z"
+  },
+  {
+    "id": "L01-S08A-api-r2",
+    "page_id": "L01-S08A",
+    "sha256": "551d7fb7afe5039d349529f41f79ea7abaf454ae72abb5006571368619801cff",
+    "passed": true,
+    "adopted": true,
+    "findings": "两个平方上标位置正确，未展示答案。边缘笔记本与空提示框属装饰差异。",
+    "reviewer": "Codex visual review",
+    "reviewed_at": "2026-11-18T01:52:02.215Z"
+  }
+]

@@ -17,7 +17,7 @@ A complete teaching-resource package for a mathematics-teaching methods course. 
 |Teaching script|[Markdown](lesson-plans/L01-script.md)|[Printable reader](docs/script.html)|
 |Lesson plan|[Plan](lesson-plans/L01-lesson-plan.md)|[Printable reader](docs/lesson.html)|
 |Board design|[SVG](board-design/L01-board.svg)|[Step-by-step board](docs/board.html)|
-|Slides|[Content](slides/pages.json), [prompts](slides/prompts/)|[HTML slides](docs/slides.html), [PPTX](outputs/L01-课件.pptx)|
+|Slides|[Storyboard](slides/L01-storyboard.md), [copy and illustration plan](slides/L01-api-v3.json)|[HTML slides](docs/slides.html), [PPTX](outputs/L01-课件.pptx)|
 |Exercises|[Questions and answers](exercises/L01-exercises.md)|E01–E05 in-class, E06 after-class|
 
 ## Repository layout

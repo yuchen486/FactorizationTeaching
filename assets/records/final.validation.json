@@ -1,15 +1,15 @@
 {
   "schemaVersion": "presentation-finalization.v1",
-  "finalSha256": "0c37fc9918a004c834e7743a223ded42e82a58d4bb9426965ba12ab0393ced72",
-  "byteCount": 12955971,
+  "finalSha256": "2ee7f0206a05fee70b17fd3fc6e72ad8c642d6c78116351e2384e08c4c0c6faf",
+  "byteCount": 25356178,
   "packageIntegrity": {
     "chart_count": 0,
     "claim_boundary": "Structural package checks only; no slide text, notes, formulas, chart values, or native PowerPoint execution were inspected.",
     "finding_count": 0,
     "findings": [],
-    "notes_parts_skipped": 14,
-    "relationship_part_count": 38,
-    "slide_count": 14,
+    "notes_parts_skipped": 15,
+    "relationship_part_count": 40,
+    "slide_count": 15,
     "status": "pass",
     "exitCode": 0,
     "findingCount": 0,
@@ -18,7 +18,7 @@
   "presentationLayout": {
     "finding_count": 0,
     "findings": [],
-    "slide_count": 14,
+    "slide_count": 15,
     "slide_size_in": [
       20,
       11.25
@@ -38,8 +38,8 @@
   "firstPartyImport": {
     "performed": true,
     "passed": true,
-    "slideCount": 14,
-    "sha256": "0c37fc9918a004c834e7743a223ded42e82a58d4bb9426965ba12ab0393ced72",
+    "slideCount": 15,
+    "sha256": "2ee7f0206a05fee70b17fd3fc6e72ad8c642d6c78116351e2384e08c4c0c6faf",
     "runtimeNodeModules": "C:\\Program Files\\WindowsApps\\OpenAI.CodexPrimaryRuntime.v26-1116-1220-0_26.1116.1220.0_x64__3k8sg7r9htsxt\\dependencies\\node\\node_modules",
     "nodeExecutable": "C:\\Program Files\\WindowsApps\\OpenAI.CodexPrimaryRuntime.v26-1116-1220-0_26.1116.1220.0_x64__3k8sg7r9htsxt\\dependencies\\node\\bin\\node.exe"
   },
@@ -55,7 +55,7 @@
     "passed": true,
     "schema_version": "presentation-native-table-arithmetic.v1",
     "skipped_tables": [],
-    "slide_count": 14,
+    "slide_count": 15,
     "warning_count": 0,
     "warnings": []
   },
@@ -67,9 +67,9 @@
     "native_chart_count": 0,
     "native_powerpoint_verified": false,
     "passed": true,
-    "presentation_sha256": "0c37fc9918a004c834e7743a223ded42e82a58d4bb9426965ba12ab0393ced72",
+    "presentation_sha256": "2ee7f0206a05fee70b17fd3fc6e72ad8c642d6c78116351e2384e08c4c0c6faf",
     "schema_version": "presentation-native-chart-titles.v1",
-    "slide_count": 14,
+    "slide_count": 15,
     "source_text_emitted": false,
     "unresolved_linked_title_count": 0
   },
@@ -80,7 +80,7 @@
     "--cover-role",
     "none",
     "--expected-slide-count",
-    "14"
+    "15"
   ],
   "nativeChartValidation": {
     "detectedOwnerSlides": [],

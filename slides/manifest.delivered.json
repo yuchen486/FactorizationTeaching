@@ -6,12 +6,12 @@
     "target_seconds": 600,
     "timing_tolerance_seconds": 0,
     "generation_policy": {
-      "mode": "single_requested",
+      "mode": "api_then_chrome",
       "required_lanes": [
-        "configured_api",
-        "native_imagegen"
+        "configured_api"
       ],
-      "single_lane_reason": "Approved API main with automatic native fallback. API candidates rejected after formula/text inspection."
+      "candidates_per_page_per_lane": 1,
+      "budget_reason": "每页 API 首轮，必要时定向重试和 Chrome 补图。"
     }
   },
   "pages": [
@@ -20,45 +20,52 @@
       "page_id": "L01-S01A",
       "project_id": "L01",
       "status": "delivered",
-      "topic": "简便计算",
+      "topic": "怎样算更快？",
       "visible_text": [
-        "简便计算",
-        "25×7＋25×3",
-        "怎样计算更简便？"
+        "课前导入",
+        "怎样算更快？",
+        "每盒装 25 支笔",
+        "第一组 7 盒　第二组 3 盒",
+        "25 × 7 + 25 × 3",
+        "你会先算什么？"
       ],
       "evidence": [
         {
+          "reference": "lesson-plans/L01-script.md",
+          "supports": "讲述与提问顺序"
+        },
+        {
           "reference": "exercises/L01-exercises.md",
-          "supports": "原创题目、答案及数学检验"
+          "supports": "题面、公式与答案"
         }
       ],
       "candidates": [
         {
-          "id": "L01-S01A-native",
+          "id": "L01-S01A-api-r1",
           "project_id": "L01",
           "status": "adopted",
-          "path": "assets/slides/L01-S01A.png",
-          "sha256": "9070deb97db1c326ebd6cd8512894012b52825ce85f99f1400c9b147f98339d0",
+          "path": "assets/candidates/v3/candidates/L01-S01A-api-r1.png",
+          "sha256": "8f1df3fd6583bbaa92b7422404dbc36f535dae90152f0cb3fabc7516c3ad6cff",
           "source": {
-            "kind": "native_imagegen",
-            "reference": "C:\\Users\\yuxua\\.codex\\generated_images\\01a1ea2b-e592-7ab3-8925-93e73631ba48\\exec-62d231ad-91ec-4f8f-ad69-cc9528687a02.png"
+            "kind": "configured_api",
+            "reference": "Configured Windows image channel"
           },
           "prompt": {
-            "path": "slides/prompts/L01-S01A-native-v1.md",
-            "version": "native-v1",
-            "sha256": "47c3a6e7cce8761770e8906a301d900c5864d4ea27cd937a046a309741b16f18"
+            "path": "assets/candidates/v3/prompts/L01-S01A-api-r1.md",
+            "version": "L01-S01A-api-r1",
+            "sha256": "b1692ae164ffc671f7caf37e07ebab6aed7b1dff5085ee9eff0a00fdae546a0b"
           },
           "quality": {
             "rating": "accept",
-            "reason": "逐字目视检查中文、公式、符号、画幅与清晰度"
+            "reason": "算式、分组数量和提问正确。文具盒是情境示意。"
           },
           "dimensions": {
-            "width_px": 1672,
-            "height_px": 941
+            "width_px": 2048,
+            "height_px": 1152
           }
         }
       ],
-      "adopted_candidate_id": "L01-S01A-native",
+      "adopted_candidate_id": "L01-S01A-api-r1",
       "qa": {
         "facts": "passed",
         "text": "passed",
@@ -67,15 +74,36 @@
       "speaker": {
         "seconds": 30,
         "keywords": [
-          "简便计算"
+          "课前导入",
+          "怎样算更快？"
         ],
-        "idea": "同学们，请看这道计算题：25乘7加25乘3。先想一想，怎样算更简便？【停顿5秒】我们可以先把7和3相加，再乘25，结果是250。",
-        "transition": "进入本环节反馈",
-        "notes_text": "简便计算｜预算30秒。\n同学们，请看这道计算题：25乘7加25乘3。先想一想，怎样算更简便？【停顿5秒】我们可以先把7和3相加，再乘25，结果是250。\n本画面文字：25×7＋25×3；怎样计算更简便？\n教材依据：沪科版七下8.4，第80—82页，国家中小学智慧教育平台。"
+        "idea": "同学们，假设每盒装 25 支笔，第一组有 7 盒，第二组有 3 盒。请看这道计算题：25乘7加25乘3。想一想，怎样算更简便？【停顿5秒】观察两项中有没有相同的数。",
+        "transition": "进入下一画面",
+        "notes_text": "课前导入｜怎样算更快？｜预算 30 秒。\n同学们，假设每盒装 25 支笔，第一组有 7 盒，第二组有 3 盒。请看这道计算题：25乘7加25乘3。想一想，怎样算更简便？【停顿5秒】观察两项中有没有相同的数。"
+      },
+      "selection": {
+        "adopted": {
+          "id": "L01-S01A-api-r1",
+          "sha256": "8f1df3fd6583bbaa92b7422404dbc36f535dae90152f0cb3fabc7516c3ad6cff",
+          "lane": "configured_api"
+        },
+        "reason": "算式、分组数量和提问正确。文具盒是情境示意。",
+        "reviews": [
+          {
+            "id": "L01-S01A-api-r1",
+            "page_id": "L01-S01A",
+            "sha256": "8f1df3fd6583bbaa92b7422404dbc36f535dae90152f0cb3fabc7516c3ad6cff",
+            "passed": true,
+            "adopted": true,
+            "findings": "算式、分组数量和提问正确。文具盒是情境示意。",
+            "reviewer": "Codex visual review",
+            "reviewed_at": "2026-11-18T01:52:02.215Z"
+          }
+        ]
       },
       "final_render": {
-        "path": "assets/final-renders/01-L01-简便计算.png",
-        "sha256": "3e745f783b2b024c33d2690839ab09db21cfd428aec1af7d65c349080edbfaa8",
+        "path": "assets/final-renders/v3/01-L01-怎样算更快？.png",
+        "sha256": "81dc23164522b4f3e306d54be4902d3c6d104297c9aada4bc5c9f364ce70addd",
         "qa": {
           "facts": "passed",
           "text": "passed",
@@ -83,7 +111,7 @@
         },
         "reviewed": true,
         "reviewer": "Codex visual review",
-        "reviewed_at": "2026-11-18T00:16:55.092550+08:00",
+        "reviewed_at": "2026-11-18T09:55:45.878368+08:00",
         "projection": {
           "width_px": 1920,
           "height_px": 1080
@@ -95,45 +123,52 @@
       "page_id": "L01-S01B",
       "project_id": "L01",
       "status": "delivered",
-      "topic": "简便计算",
+      "topic": "先合并盒数",
       "visible_text": [
-        "简便计算",
-        "25×7＋25×3＝25×(7＋3)＝250",
-        "共同的25可以提出来"
+        "课前导入",
+        "先合并盒数",
+        "25 × 7 + 25 × 3",
+        "= 25 × (7 + 3)",
+        "= 250",
+        "两组每盒都是 25 支，可以先把盒数相加。"
       ],
       "evidence": [
         {
+          "reference": "lesson-plans/L01-script.md",
+          "supports": "讲述与提问顺序"
+        },
+        {
           "reference": "exercises/L01-exercises.md",
-          "supports": "原创题目、答案及数学检验"
+          "supports": "题面、公式与答案"
         }
       ],
       "candidates": [
         {
-          "id": "L01-S01B-native",
+          "id": "L01-S01B-api-r2",
           "project_id": "L01",
           "status": "adopted",
-          "path": "assets/slides/L01-S01B.png",
-          "sha256": "288a6c60f7504ac39595ea9635590f32c85b3722c7efd8f03b6675a9ece03055",
+          "path": "assets/candidates/v3/candidates/L01-S01B-api-r2.png",
+          "sha256": "6fab2807ea28c8e07beedc73eadaf4495c68e6c3b61a678117ce797b58c98b16",
           "source": {
-            "kind": "native_imagegen",
-            "reference": "C:\\Users\\yuxua\\.codex\\generated_images\\01a1ea2b-e592-7ab3-8925-93e73631ba48\\exec-5f5d7d88-dad2-4345-8f29-f6a6b063e98f.png"
+            "kind": "configured_api",
+            "reference": "Configured Windows image channel"
           },
           "prompt": {
-            "path": "slides/prompts/L01-S01B-native-v1.md",
-            "version": "native-v1",
-            "sha256": "9c601fcde4b73a622803fa7b5cb9ec7befd18773b9abc615ef4caabeff827227"
+            "path": "assets/candidates/v3/prompts/L01-S01B-api-r2.md",
+            "version": "L01-S01B-api-r2",
+            "sha256": "ec70f0fde0421d1c1358cf1b35167b384392d6c42c31b6fc9fa3696e0af9484b"
           },
           "quality": {
             "rating": "accept",
-            "reason": "逐字目视检查中文、公式、符号、画幅与清晰度"
+            "reason": "三行等式逐项正确，以单个笔盒和铅笔作示意，插图与数量无冲突。"
           },
           "dimensions": {
-            "width_px": 1672,
-            "height_px": 941
+            "width_px": 2048,
+            "height_px": 1152
           }
         }
       ],
-      "adopted_candidate_id": "L01-S01B-native",
+      "adopted_candidate_id": "L01-S01B-api-r2",
       "qa": {
         "facts": "passed",
         "text": "passed",
@@ -142,15 +177,46 @@
       "speaker": {
         "seconds": 30,
         "keywords": [
-          "简便计算"
+          "课前导入",
+          "先合并盒数"
         ],
-        "idea": "这里用了乘法分配律。观察算式，两项中都有什么？【预设：25】我们把共同的25提到括号外，括号里面留下7加3。接下来，把这样的想法用到含字母的式子中。",
-        "transition": "进入下一教学环节",
-        "notes_text": "简便计算｜预算30秒。\n这里用了乘法分配律。观察算式，两项中都有什么？【预设：25】我们把共同的25提到括号外，括号里面留下7加3。接下来，把这样的想法用到含字母的式子中。\n本画面文字：25×7＋25×3＝25×(7＋3)＝250；共同的25可以提出来\n教材依据：沪科版七下8.4，第80—82页，国家中小学智慧教育平台。"
+        "idea": "两项中都有25。用乘法分配律，可以先把7和3相加，再乘25，得到250。我们把共同的25提到括号外。接下来，把这样的想法用到含字母的式子中。",
+        "transition": "进入下一画面",
+        "notes_text": "课前导入｜先合并盒数｜预算 30 秒。\n两项中都有25。用乘法分配律，可以先把7和3相加，再乘25，得到250。我们把共同的25提到括号外。接下来，把这样的想法用到含字母的式子中。"
+      },
+      "selection": {
+        "adopted": {
+          "id": "L01-S01B-api-r2",
+          "sha256": "6fab2807ea28c8e07beedc73eadaf4495c68e6c3b61a678117ce797b58c98b16",
+          "lane": "configured_api"
+        },
+        "reason": "三行等式逐项正确，以单个笔盒和铅笔作示意，插图与数量无冲突。",
+        "reviews": [
+          {
+            "id": "L01-S01B-api-r1",
+            "page_id": "L01-S01B",
+            "sha256": "da3341722d61efa7bd9a66bdc2c1a33e41530424835140c5bd64af118c987711",
+            "passed": false,
+            "adopted": false,
+            "findings": "图示把两组都画成三盒，和算式中的 7 盒与 3 盒冲突。",
+            "reviewer": "Codex visual review",
+            "reviewed_at": "2026-11-18T01:52:02.215Z"
+          },
+          {
+            "id": "L01-S01B-api-r2",
+            "page_id": "L01-S01B",
+            "sha256": "6fab2807ea28c8e07beedc73eadaf4495c68e6c3b61a678117ce797b58c98b16",
+            "passed": true,
+            "adopted": true,
+            "findings": "三行等式逐项正确，以单个笔盒和铅笔作示意，插图与数量无冲突。",
+            "reviewer": "Codex visual review",
+            "reviewed_at": "2026-11-18T01:52:02.215Z"
+          }
+        ]
       },
       "final_render": {
-        "path": "assets/final-renders/02-L01-简便计算.png",
-        "sha256": "1242ad3cf1e9ef4cb7c28ca9968f68d4575cc59a816cf0fe8aca828ddf46d855",
+        "path": "assets/final-renders/v3/02-L01-先合并盒数.png",
+        "sha256": "ac541a757e61eb183040c915b6bf13a20141930e33163641413eb197b89809eb",
         "qa": {
           "facts": "passed",
           "text": "passed",
@@ -158,7 +224,7 @@
         },
         "reviewed": true,
         "reviewer": "Codex visual review",
-        "reviewed_at": "2026-11-18T00:16:55.094551+08:00",
+        "reviewed_at": "2026-11-18T09:55:45.878368+08:00",
         "projection": {
           "width_px": 1920,
           "height_px": 1080
@@ -170,45 +236,51 @@
       "page_id": "L01-S02A",
       "project_id": "L01",
       "status": "delivered",
-      "topic": "因式分解的方向",
+      "topic": "从积到和",
       "visible_text": [
-        "因式分解的方向",
-        "a(b＋c)＝ab＋ac",
-        "怎样把右边重新写成积？"
+        "概念探究",
+        "从积到和",
+        "a(b + c) = ab + ac",
+        "展开：把整式的积写成多项式。",
+        "右边能重新写成积吗？"
       ],
       "evidence": [
         {
+          "reference": "lesson-plans/L01-script.md",
+          "supports": "讲述与提问顺序"
+        },
+        {
           "reference": "exercises/L01-exercises.md",
-          "supports": "原创题目、答案及数学检验"
+          "supports": "题面、公式与答案"
         }
       ],
       "candidates": [
         {
-          "id": "L01-S02A-native",
+          "id": "L01-S02A-api-r1",
           "project_id": "L01",
           "status": "adopted",
-          "path": "assets/slides/L01-S02A.png",
-          "sha256": "8f66337b3f4885eb9dcdcc9b1ae0a00e9f8db9368e7a5d65a987d18eb65e743b",
+          "path": "assets/candidates/v3/candidates/L01-S02A-api-r1.png",
+          "sha256": "c5257b1cd1482d88f4eba461e767c2d9111b1d3a82418617fdc4f64600491aa6",
           "source": {
-            "kind": "native_imagegen",
-            "reference": "C:\\Users\\yuxua\\.codex\\generated_images\\01a1ea2b-e592-7ab3-8925-93e73631ba48\\exec-466f944f-e4b4-46d9-a5ee-ab766cf5b560.png"
+            "kind": "configured_api",
+            "reference": "Configured Windows image channel"
           },
           "prompt": {
-            "path": "slides/prompts/L01-S02A-native-v1.md",
-            "version": "native-v1",
-            "sha256": "9f1a71c5c0b517a851ed1ae7cd52488f140a4b58d7730658996734b3c251bb6d"
+            "path": "assets/candidates/v3/prompts/L01-S02A-api-r1.md",
+            "version": "L01-S02A-api-r1",
+            "sha256": "b8ed27ed87d3d78eef532222500feee3b1ed8cd316cc13fcdca0d9ff32300c20"
           },
           "quality": {
             "rating": "accept",
-            "reason": "逐字目视检查中文、公式、符号、画幅与清晰度"
+            "reason": "展开等式与提问正确，两块面积与右侧两加数按颜色对应。"
           },
           "dimensions": {
-            "width_px": 1672,
-            "height_px": 941
+            "width_px": 2048,
+            "height_px": 1152
           }
         }
       ],
-      "adopted_candidate_id": "L01-S02A-native",
+      "adopted_candidate_id": "L01-S02A-api-r1",
       "qa": {
         "facts": "passed",
         "text": "passed",
@@ -217,15 +289,36 @@
       "speaker": {
         "seconds": 40,
         "keywords": [
-          "因式分解的方向"
+          "概念探究",
+          "从积到和"
         ],
-        "idea": "我们已经会用乘法分配律展开：a乘括号b加c，得到ab加ac。这是由积写成和。现在请反过来看：ab加ac中，每一项都有因式a。能把它写回一个积吗？【停顿5秒】可以写成a乘括号b加c。",
-        "transition": "进入本环节反馈",
-        "notes_text": "因式分解的方向｜预算40秒。\n我们已经会用乘法分配律展开：a乘括号b加c，得到ab加ac。这是由积写成和。现在请反过来看：ab加ac中，每一项都有因式a。能把它写回一个积吗？【停顿5秒】可以写成a乘括号b加c。\n本画面文字：a(b＋c)＝ab＋ac；怎样把右边重新写成积？\n教材依据：沪科版七下8.4，第80—82页，国家中小学智慧教育平台。"
+        "idea": "我们已经会用乘法分配律展开：a乘括号b加c，得到ab加ac。这是由积写成和。现在请反过来看：能把右边重新写成积吗？【停顿5秒】",
+        "transition": "进入下一画面",
+        "notes_text": "概念探究｜从积到和｜预算 40 秒。\n我们已经会用乘法分配律展开：a乘括号b加c，得到ab加ac。这是由积写成和。现在请反过来看：能把右边重新写成积吗？【停顿5秒】"
+      },
+      "selection": {
+        "adopted": {
+          "id": "L01-S02A-api-r1",
+          "sha256": "c5257b1cd1482d88f4eba461e767c2d9111b1d3a82418617fdc4f64600491aa6",
+          "lane": "configured_api"
+        },
+        "reason": "展开等式与提问正确，两块面积与右侧两加数按颜色对应。",
+        "reviews": [
+          {
+            "id": "L01-S02A-api-r1",
+            "page_id": "L01-S02A",
+            "sha256": "c5257b1cd1482d88f4eba461e767c2d9111b1d3a82418617fdc4f64600491aa6",
+            "passed": true,
+            "adopted": true,
+            "findings": "展开等式与提问正确，两块面积与右侧两加数按颜色对应。",
+            "reviewer": "Codex visual review",
+            "reviewed_at": "2026-11-18T01:52:02.215Z"
+          }
+        ]
       },
       "final_render": {
-        "path": "assets/final-renders/03-L01-因式分解的方向.png",
-        "sha256": "c474d380d6f1edff426f2971244fe5d514cba089aef2fc9378b667a43a1eb84f",
+        "path": "assets/final-renders/v3/03-L01-从积到和.png",
+        "sha256": "74a65af5b9c023a28eeb44822eff03df77ea88c3f1181dfe9af999597c1884d3",
         "qa": {
           "facts": "passed",
           "text": "passed",
@@ -233,7 +326,7 @@
         },
         "reviewed": true,
         "reviewer": "Codex visual review",
-        "reviewed_at": "2026-11-18T00:16:55.098976+08:00",
+        "reviewed_at": "2026-11-18T09:55:45.878368+08:00",
         "projection": {
           "width_px": 1920,
           "height_px": 1080
@@ -245,45 +338,51 @@
       "page_id": "L01-S02B",
       "project_id": "L01",
       "status": "delivered",
-      "topic": "因式分解的方向",
+      "topic": "从和到积",
       "visible_text": [
-        "因式分解的方向",
-        "ab＋ac＝a(b＋c)",
-        "把一个多项式化为几个整式的积，叫作因式分解"
+        "概念探究",
+        "从和到积",
+        "ab + ac = a(b + c)",
+        "把一个多项式化成几个整式的积，叫作因式分解。",
+        "观察：两项都含有 a。"
       ],
       "evidence": [
         {
+          "reference": "lesson-plans/L01-script.md",
+          "supports": "讲述与提问顺序"
+        },
+        {
           "reference": "exercises/L01-exercises.md",
-          "supports": "原创题目、答案及数学检验"
+          "supports": "题面、公式与答案"
         }
       ],
       "candidates": [
         {
-          "id": "L01-S02B-native",
+          "id": "L01-S02B-api-r1",
           "project_id": "L01",
           "status": "adopted",
-          "path": "assets/slides/L01-S02B.png",
-          "sha256": "2d945d53f66293f355b5ab25be9fa5709ba55cb46ab90d20f833925740017aa0",
+          "path": "assets/candidates/v3/candidates/L01-S02B-api-r1.png",
+          "sha256": "718716638832e6dbb51a3c000ef7e55091a24e865a01dddecb38c96b5dfc4f9f",
           "source": {
-            "kind": "native_imagegen",
-            "reference": "C:\\Users\\yuxua\\.codex\\generated_images\\01a1ea2b-e592-7ab3-8925-93e73631ba48\\exec-912355f4-78bb-4b18-a2c3-d7f16e0b052c.png"
+            "kind": "configured_api",
+            "reference": "Configured Windows image channel"
           },
           "prompt": {
-            "path": "slides/prompts/L01-S02B-native-v1.md",
-            "version": "native-v1",
-            "sha256": "efc57c497735de848809ba3d24cce96c9421300b707025d442fe68bf08043c78"
+            "path": "assets/candidates/v3/prompts/L01-S02B-api-r1.md",
+            "version": "L01-S02B-api-r1",
+            "sha256": "1ff1aa73646945cb2bebbbe62da1369612bc5579410c07bf8e67cbf327638bf3"
           },
           "quality": {
             "rating": "accept",
-            "reason": "逐字目视检查中文、公式、符号、画幅与清晰度"
+            "reason": "逆向等式、定义和因式 a 正确，分块至整体方向清楚。"
           },
           "dimensions": {
-            "width_px": 1672,
-            "height_px": 941
+            "width_px": 2048,
+            "height_px": 1152
           }
         }
       ],
-      "adopted_candidate_id": "L01-S02B-native",
+      "adopted_candidate_id": "L01-S02B-api-r1",
       "qa": {
         "facts": "passed",
         "text": "passed",
@@ -292,15 +391,36 @@
       "speaker": {
         "seconds": 50,
         "keywords": [
-          "因式分解的方向"
+          "概念探究",
+          "从和到积"
         ],
-        "idea": "把一个多项式化为几个整式的积，叫作因式分解，也叫分解因式。请比较两个方向：展开时由积到和，因式分解时由和到积。注意，结果整体要写成积，每个因式都是整式。今天我们学习其中一种方法：提公因式法。",
-        "transition": "进入下一教学环节",
-        "notes_text": "因式分解的方向｜预算50秒。\n把一个多项式化为几个整式的积，叫作因式分解，也叫分解因式。请比较两个方向：展开时由积到和，因式分解时由和到积。注意，结果整体要写成积，每个因式都是整式。今天我们学习其中一种方法：提公因式法。\n本画面文字：ab＋ac＝a(b＋c)；把一个多项式化为几个整式的积，叫作因式分解\n教材依据：沪科版七下8.4，第80—82页，国家中小学智慧教育平台。"
+        "idea": "ab加ac的每一项都有因式a，可以写成a乘括号b加c。把一个多项式化成几个整式的积，叫作因式分解，也叫分解因式。【左栏板书】展开是由积到和，因式分解是由多项式写成积。今天我们学习提公因式法。",
+        "transition": "进入下一画面",
+        "notes_text": "概念探究｜从和到积｜预算 50 秒。\nab加ac的每一项都有因式a，可以写成a乘括号b加c。把一个多项式化成几个整式的积，叫作因式分解，也叫分解因式。【左栏板书】展开是由积到和，因式分解是由多项式写成积。今天我们学习提公因式法。"
+      },
+      "selection": {
+        "adopted": {
+          "id": "L01-S02B-api-r1",
+          "sha256": "718716638832e6dbb51a3c000ef7e55091a24e865a01dddecb38c96b5dfc4f9f",
+          "lane": "configured_api"
+        },
+        "reason": "逆向等式、定义和因式 a 正确，分块至整体方向清楚。",
+        "reviews": [
+          {
+            "id": "L01-S02B-api-r1",
+            "page_id": "L01-S02B",
+            "sha256": "718716638832e6dbb51a3c000ef7e55091a24e865a01dddecb38c96b5dfc4f9f",
+            "passed": true,
+            "adopted": true,
+            "findings": "逆向等式、定义和因式 a 正确，分块至整体方向清楚。",
+            "reviewer": "Codex visual review",
+            "reviewed_at": "2026-11-18T01:52:02.215Z"
+          }
+        ]
       },
       "final_render": {
-        "path": "assets/final-renders/04-L01-因式分解的方向.png",
-        "sha256": "f8f446120d3e2cc6176bb5457f6b9b1c5bda00f9833132333dab68473a265aef",
+        "path": "assets/final-renders/v3/04-L01-从和到积.png",
+        "sha256": "393c3ee08cdd1e2f4443fa10845aa13bc2be08184ed954c4eb2f45d75d73a045",
         "qa": {
           "facts": "passed",
           "text": "passed",
@@ -308,7 +428,7 @@
         },
         "reviewed": true,
         "reviewer": "Codex visual review",
-        "reviewed_at": "2026-11-18T00:16:55.100513+08:00",
+        "reviewed_at": "2026-11-18T09:55:45.878368+08:00",
         "projection": {
           "width_px": 1920,
           "height_px": 1080
@@ -320,45 +440,51 @@
       "page_id": "L01-S03A",
       "project_id": "L01",
       "status": "delivered",
-      "topic": "公因式",
+      "topic": "从两条线索入手",
       "visible_text": [
-        "公因式",
-        "6x²＋9x",
-        "两项共同含有什么因式？"
+        "识别公因式",
+        "从两条线索入手",
+        "6x² + 9x",
+        "看系数：6 和 9 的最大公因数是多少？",
+        "看字母：x² 和 x 的公共部分是什么？"
       ],
       "evidence": [
         {
+          "reference": "lesson-plans/L01-script.md",
+          "supports": "讲述与提问顺序"
+        },
+        {
           "reference": "exercises/L01-exercises.md",
-          "supports": "原创题目、答案及数学检验"
+          "supports": "题面、公式与答案"
         }
       ],
       "candidates": [
         {
-          "id": "L01-S03A-native",
+          "id": "L01-S03A-api-r1",
           "project_id": "L01",
           "status": "adopted",
-          "path": "assets/slides/L01-S03A.png",
-          "sha256": "22fc8f52942f51405776f4edac71c4d19168766a2b26ac389be4cd5bf4b5a371",
+          "path": "assets/candidates/v3/candidates/L01-S03A-api-r1.png",
+          "sha256": "9ef7472c1c1ebf267ee8198f9bce27203d93d802ce24aa3db5a9bd6eb5ef23a0",
           "source": {
-            "kind": "native_imagegen",
-            "reference": "C:\\Users\\yuxua\\.codex\\generated_images\\01a1ea2b-e592-7ab3-8925-93e73631ba48\\exec-6750963e-3a80-4076-84ad-675fb0b2bd52.png"
+            "kind": "configured_api",
+            "reference": "Configured Windows image channel"
           },
           "prompt": {
-            "path": "slides/prompts/L01-S03A-native-v1.md",
-            "version": "native-v1",
-            "sha256": "b845d21949f6f372eb22b370b97d4e1133b53a6b5edb7510c3ab60f9a50cc4e5"
+            "path": "assets/candidates/v3/prompts/L01-S03A-api-r1.md",
+            "version": "L01-S03A-api-r1",
+            "sha256": "7ed2d627c8e1facc33115f54e10dff451bff19a689329a8b28832a070bc42939"
           },
           "quality": {
             "rating": "accept",
-            "reason": "逐字目视检查中文、公式、符号、画幅与清晰度"
+            "reason": "主式及两条提示正确，卡片序号为轻微辅助标注。"
           },
           "dimensions": {
-            "width_px": 1672,
-            "height_px": 941
+            "width_px": 2048,
+            "height_px": 1152
           }
         }
       ],
-      "adopted_candidate_id": "L01-S03A-native",
+      "adopted_candidate_id": "L01-S03A-api-r1",
       "qa": {
         "facts": "passed",
         "text": "passed",
@@ -367,15 +493,36 @@
       "speaker": {
         "seconds": 40,
         "keywords": [
-          "公因式"
+          "识别公因式",
+          "从两条线索入手"
         ],
-        "idea": "请看6x的平方加9x。先观察系数6和9，它们的最大公因数是多少？【预设：3】再看字母，两项都有x，共同部分取最低次数，是x。因此，可以选3x作为公因式。",
-        "transition": "进入本环节反馈",
-        "notes_text": "公因式｜预算40秒。\n请看6x的平方加9x。先观察系数6和9，它们的最大公因数是多少？【预设：3】再看字母，两项都有x，共同部分取最低次数，是x。因此，可以选3x作为公因式。\n本画面文字：6x²＋9x；两项共同含有什么因式？\n教材依据：沪科版七下8.4，第80—82页，国家中小学智慧教育平台。"
+        "idea": "请看6x的平方加9x。先观察系数6和9，它们的最大公因数是多少？再比较x的平方和x，共同的字母部分是什么？【停顿】",
+        "transition": "进入下一画面",
+        "notes_text": "识别公因式｜从两条线索入手｜预算 40 秒。\n请看6x的平方加9x。先观察系数6和9，它们的最大公因数是多少？再比较x的平方和x，共同的字母部分是什么？【停顿】"
+      },
+      "selection": {
+        "adopted": {
+          "id": "L01-S03A-api-r1",
+          "sha256": "9ef7472c1c1ebf267ee8198f9bce27203d93d802ce24aa3db5a9bd6eb5ef23a0",
+          "lane": "configured_api"
+        },
+        "reason": "主式及两条提示正确，卡片序号为轻微辅助标注。",
+        "reviews": [
+          {
+            "id": "L01-S03A-api-r1",
+            "page_id": "L01-S03A",
+            "sha256": "9ef7472c1c1ebf267ee8198f9bce27203d93d802ce24aa3db5a9bd6eb5ef23a0",
+            "passed": true,
+            "adopted": true,
+            "findings": "主式及两条提示正确，卡片序号为轻微辅助标注。",
+            "reviewer": "Codex visual review",
+            "reviewed_at": "2026-11-18T01:52:02.215Z"
+          }
+        ]
       },
       "final_render": {
-        "path": "assets/final-renders/05-L01-公因式.png",
-        "sha256": "7ee34c482bce7a47b4b220263fcb6605dcbb1d3ab4804989eb57df0c353b8144",
+        "path": "assets/final-renders/v3/05-L01-从两条线索入手.png",
+        "sha256": "97aab35a551df587a27e9f1a546afec55236554bafe1e05cd3a4cc98493f8028",
         "qa": {
           "facts": "passed",
           "text": "passed",
@@ -383,7 +530,7 @@
         },
         "reviewed": true,
         "reviewer": "Codex visual review",
-        "reviewed_at": "2026-11-18T00:16:55.101601+08:00",
+        "reviewed_at": "2026-11-18T09:55:45.878368+08:00",
         "projection": {
           "width_px": 1920,
           "height_px": 1080
@@ -395,46 +542,52 @@
       "page_id": "L01-S03B",
       "project_id": "L01",
       "status": "delivered",
-      "topic": "公因式",
+      "topic": "公因式是 3x",
       "visible_text": [
-        "公因式",
-        "6x²＝3x·2x",
-        "9x＝3x·3",
-        "公因式：3x"
+        "识别公因式",
+        "公因式是 3x",
+        "6 和 9 的最大公因数是 3",
+        "公共字母 x 取最低次数",
+        "6x² = 3x · 2x",
+        "9x = 3x · 3"
       ],
       "evidence": [
         {
+          "reference": "lesson-plans/L01-script.md",
+          "supports": "讲述与提问顺序"
+        },
+        {
           "reference": "exercises/L01-exercises.md",
-          "supports": "原创题目、答案及数学检验"
+          "supports": "题面、公式与答案"
         }
       ],
       "candidates": [
         {
-          "id": "L01-S03B-native",
+          "id": "L01-S03B-api-r2",
           "project_id": "L01",
           "status": "adopted",
-          "path": "assets/slides/L01-S03B.png",
-          "sha256": "de2ffa24e8978c1745e1e060c38222aed1c86c45e9cf0b1dd54d2e81a366285a",
+          "path": "assets/candidates/v3/candidates/L01-S03B-api-r2.png",
+          "sha256": "6c93c746d7581f435529080b273a308b15a820fd95ef137af498df2d6bfbfef9",
           "source": {
-            "kind": "native_imagegen",
-            "reference": "C:\\Users\\yuxua\\.codex\\generated_images\\01a1ea2b-e592-7ab3-8925-93e73631ba48\\exec-b6ed3e07-9c44-4bd4-8671-5839d4a97bd2.png"
+            "kind": "configured_api",
+            "reference": "Configured Windows image channel"
           },
           "prompt": {
-            "path": "slides/prompts/L01-S03B-native-v1.md",
-            "version": "native-v1",
-            "sha256": "ee54c4a569035097eda2ea3ce307dc59269940533a78022531316a2b717f26bf"
+            "path": "assets/candidates/v3/prompts/L01-S03B-api-r2.md",
+            "version": "L01-S03B-api-r2",
+            "sha256": "6c018657eac913a2562f56ee562e95ea57a86cf03ec483555bd820d712f92f24"
           },
           "quality": {
             "rating": "accept",
-            "reason": "逐字目视检查中文、公式、符号、画幅与清晰度"
+            "reason": "两条线索和拆写等式清晰，额外空色块只影响装饰。"
           },
           "dimensions": {
-            "width_px": 1672,
-            "height_px": 941
+            "width_px": 2048,
+            "height_px": 1152
           }
         }
       ],
-      "adopted_candidate_id": "L01-S03B-native",
+      "adopted_candidate_id": "L01-S03B-api-r2",
       "qa": {
         "facts": "passed",
         "text": "passed",
@@ -443,15 +596,46 @@
       "speaker": {
         "seconds": 50,
         "keywords": [
-          "公因式"
+          "识别公因式",
+          "公因式是 3x"
         ],
-        "idea": "公因式是多项式各项都含有的因式。我们可以把6x的平方写成3x乘2x，把9x写成3x乘3。请看，两项中相同的3x就清楚地出现了。【板书并停顿】确定公因式时，系数取最大公因数，相同字母取最低次数。本节练习的系数都是整数。",
-        "transition": "进入下一教学环节",
-        "notes_text": "公因式｜预算50秒。\n公因式是多项式各项都含有的因式。我们可以把6x的平方写成3x乘2x，把9x写成3x乘3。请看，两项中相同的3x就清楚地出现了。【板书并停顿】确定公因式时，系数取最大公因数，相同字母取最低次数。本节练习的系数都是整数。\n本画面文字：6x²＝3x·2x；9x＝3x·3；公因式：3x\n教材依据：沪科版七下8.4，第80—82页，国家中小学智慧教育平台。"
+        "idea": "【预设：最大公因数是3，共同的字母部分是x】相同字母取最低次数，所以本例提出3x。6x的平方等于3x乘2x，9x等于3x乘3。【中栏板书并停顿】本节练习按整系数多项式组织。",
+        "transition": "进入下一画面",
+        "notes_text": "识别公因式｜公因式是 3x｜预算 50 秒。\n【预设：最大公因数是3，共同的字母部分是x】相同字母取最低次数，所以本例提出3x。6x的平方等于3x乘2x，9x等于3x乘3。【中栏板书并停顿】本节练习按整系数多项式组织。"
+      },
+      "selection": {
+        "adopted": {
+          "id": "L01-S03B-api-r2",
+          "sha256": "6c93c746d7581f435529080b273a308b15a820fd95ef137af498df2d6bfbfef9",
+          "lane": "configured_api"
+        },
+        "reason": "两条线索和拆写等式清晰，额外空色块只影响装饰。",
+        "reviews": [
+          {
+            "id": "L01-S03B-api-r1",
+            "page_id": "L01-S03B",
+            "sha256": "fe9ca0989cdc7f14718d6f86082845f3bd259eaa66571ad4a8bc45472a557157",
+            "passed": false,
+            "adopted": false,
+            "findings": "额外分支箭头从 3x 指向 2x、3，容易被理解为 3x 的因式拆分。",
+            "reviewer": "Codex visual review",
+            "reviewed_at": "2026-11-18T01:52:02.215Z"
+          },
+          {
+            "id": "L01-S03B-api-r2",
+            "page_id": "L01-S03B",
+            "sha256": "6c93c746d7581f435529080b273a308b15a820fd95ef137af498df2d6bfbfef9",
+            "passed": true,
+            "adopted": true,
+            "findings": "两条线索和拆写等式清晰，额外空色块只影响装饰。",
+            "reviewer": "Codex visual review",
+            "reviewed_at": "2026-11-18T01:52:02.215Z"
+          }
+        ]
       },
       "final_render": {
-        "path": "assets/final-renders/06-L01-公因式.png",
-        "sha256": "b3e5109238747dde68a7e8ec797efd68e2dcaf95019585bab9a9345256b0eef0",
+        "path": "assets/final-renders/v3/06-L01-公因式是 3x.png",
+        "sha256": "69b20626b8a8c5839a9fa925a47abec15280a510632b6ad52ba0d10f560adb8b",
         "qa": {
           "facts": "passed",
           "text": "passed",
@@ -459,7 +643,7 @@
         },
         "reviewed": true,
         "reviewer": "Codex visual review",
-        "reviewed_at": "2026-11-18T00:16:55.103750+08:00",
+        "reviewed_at": "2026-11-18T09:55:45.878368+08:00",
         "projection": {
           "width_px": 1920,
           "height_px": 1080
@@ -471,37 +655,44 @@
       "page_id": "L01-S04A",
       "project_id": "L01",
       "status": "delivered",
-      "topic": "提取与检验",
+      "topic": "逐项求商",
       "visible_text": [
-        "提取与检验",
-        "6x²＋9x＝3x·2x＋3x·3",
-        "括号里应留下什么？"
+        "例题示范",
+        "逐项求商",
+        "6x² + 9x",
+        "第一项：6x² ÷ 3x",
+        "第二项：9x ÷ 3x",
+        "提出 3x 后，括号里留下哪两项？"
       ],
       "evidence": [
         {
+          "reference": "lesson-plans/L01-script.md",
+          "supports": "讲述与提问顺序"
+        },
+        {
           "reference": "exercises/L01-exercises.md",
-          "supports": "原创题目、答案及数学检验"
+          "supports": "题面、公式与答案"
         }
       ],
       "candidates": [
         {
-          "id": "L01-S04A-native",
+          "id": "L01-S04A-chrome",
           "project_id": "L01",
           "status": "adopted",
-          "path": "assets/slides/L01-S04A.png",
-          "sha256": "d7e52072aa126af105940bd4ada2a6c89ed0f944bc93541f50315d009ce9096e",
+          "path": "assets/candidates/v3/candidates/L01-S04A-chrome.png",
+          "sha256": "7e8b7cac91a0a7583068f574d22995cdba59285f71ac2da8cfb13a4ac20022ba",
           "source": {
-            "kind": "native_imagegen",
-            "reference": "C:\\Users\\yuxua\\.codex\\generated_images\\01a1ea2b-e592-7ab3-8925-93e73631ba48\\exec-631667e1-0daf-463e-9df5-260db9455cc4.png"
+            "kind": "web_chatgpt",
+            "reference": "https://chatgpt.com/c/6afd03d3-d028-83ea-9d51-300b1077dee9"
           },
           "prompt": {
-            "path": "slides/prompts/L01-S04A-native-v1.md",
-            "version": "native-v1",
-            "sha256": "98307032304d3a34134967a2687efb88ca1a87c3d7552f2bb0a5da68d11cdde6"
+            "path": "assets/candidates/v3/prompts/L01-S04A-api-r2.md",
+            "version": "L01-S04A-chrome",
+            "sha256": "39a35d5febeb6866c844c0568ae6505ffca9ba10a6cb464f21bc76d1cf2eaec5"
           },
           "quality": {
             "rating": "accept",
-            "reason": "逐字目视检查中文、公式、符号、画幅与清晰度"
+            "reason": "两项除法与问题逐字对应，公式清晰，未提前给商或括号答案。"
           },
           "dimensions": {
             "width_px": 1672,
@@ -509,7 +700,7 @@
           }
         }
       ],
-      "adopted_candidate_id": "L01-S04A-native",
+      "adopted_candidate_id": "L01-S04A-chrome",
       "qa": {
         "facts": "passed",
         "text": "passed",
@@ -518,15 +709,56 @@
       "speaker": {
         "seconds": 60,
         "keywords": [
-          "提取与检验"
+          "例题示范",
+          "逐项求商"
         ],
-        "idea": "现在把两项共同的3x提出来。第一项6x的平方等于3x乘2x，所以括号里第一项是2x。第二项9x等于3x乘3，所以括号里第二项是3。两项之间原来是加号，括号里仍然是加号。这样得到3x乘括号2x加3。",
-        "transition": "进入本环节反馈",
-        "notes_text": "提取与检验｜预算60秒。\n现在把两项共同的3x提出来。第一项6x的平方等于3x乘2x，所以括号里第一项是2x。第二项9x等于3x乘3，所以括号里第二项是3。两项之间原来是加号，括号里仍然是加号。这样得到3x乘括号2x加3。\n本画面文字：6x²＋9x＝3x·2x＋3x·3；括号里应留下什么？\n教材依据：沪科版七下8.4，第80—82页，国家中小学智慧教育平台。"
+        "idea": "把两项拆开看。6x的平方除以3x，商是2x；9x除以3x，商是3。【板书拆写过程】两项之间是加号。共同提出3x，括号里留下什么？【停顿5秒】",
+        "transition": "进入下一画面",
+        "notes_text": "例题示范｜逐项求商｜预算 60 秒。\n把两项拆开看。6x的平方除以3x，商是2x；9x除以3x，商是3。【板书拆写过程】两项之间是加号。共同提出3x，括号里留下什么？【停顿5秒】"
+      },
+      "selection": {
+        "adopted": {
+          "id": "L01-S04A-chrome",
+          "sha256": "7e8b7cac91a0a7583068f574d22995cdba59285f71ac2da8cfb13a4ac20022ba",
+          "lane": "web_chatgpt"
+        },
+        "reason": "两项除法与问题逐字对应，公式清晰，未提前给商或括号答案。",
+        "reviews": [
+          {
+            "id": "L01-S04A-api-r1",
+            "page_id": "L01-S04A",
+            "sha256": "9c9184de5b3910f02be4e29f2b66bfb548c13c2a59608d6edf918bcaba30be0e",
+            "passed": false,
+            "adopted": false,
+            "findings": "主式与除法正确，额外花括号无标签，容易把 3x 理解为两项合并后的值。",
+            "reviewer": "Codex visual review",
+            "reviewed_at": "2026-11-18T01:52:02.215Z"
+          },
+          {
+            "id": "L01-S04A-api-r2",
+            "page_id": "L01-S04A",
+            "sha256": "8dd7f175897160d9af23f669e857dfddc57235b957e6df500e92a1c80b99fd7d",
+            "passed": false,
+            "adopted": false,
+            "findings": "额外的“易错点 3x”把本题公因式标成错误提示，易误导。",
+            "reviewer": "Codex visual review",
+            "reviewed_at": "2026-11-18T01:52:02.215Z"
+          },
+          {
+            "id": "L01-S04A-chrome",
+            "page_id": "L01-S04A",
+            "sha256": "7e8b7cac91a0a7583068f574d22995cdba59285f71ac2da8cfb13a4ac20022ba",
+            "passed": true,
+            "adopted": true,
+            "findings": "两项除法与问题逐字对应，公式清晰，未提前给商或括号答案。",
+            "reviewer": "Codex visual review",
+            "reviewed_at": "2026-11-18T01:52:02.215Z"
+          }
+        ]
       },
       "final_render": {
-        "path": "assets/final-renders/07-L01-提取与检验.png",
-        "sha256": "7f7a71e8ca572be94dfe6d31ef37dd33571f99273b38aad4ce1a331f94c5e983",
+        "path": "assets/final-renders/v3/07-L01-逐项求商.png",
+        "sha256": "52e6a032f995af1b3c1ad95b72953a37262e0c0bfeaf8a413b1b523d8d71cf43",
         "qa": {
           "facts": "passed",
           "text": "passed",
@@ -534,7 +766,7 @@
         },
         "reviewed": true,
         "reviewer": "Codex visual review",
-        "reviewed_at": "2026-11-18T00:16:55.104748+08:00",
+        "reviewed_at": "2026-11-18T09:55:45.878368+08:00",
         "projection": {
           "width_px": 1920,
           "height_px": 1080
@@ -546,37 +778,43 @@
       "page_id": "L01-S04B",
       "project_id": "L01",
       "status": "delivered",
-      "topic": "提取与检验",
+      "topic": "写成积，再乘回",
       "visible_text": [
-        "提取与检验",
-        "6x²＋9x＝3x(2x＋3)",
-        "检验：3x(2x＋3)＝6x²＋9x"
+        "例题示范",
+        "写成积，再乘回",
+        "6x² + 9x = 3x(2x + 3)",
+        "检验：3x(2x + 3) = 6x² + 9x",
+        "括号里的每一项，都要乘回 3x。"
       ],
       "evidence": [
         {
+          "reference": "lesson-plans/L01-script.md",
+          "supports": "讲述与提问顺序"
+        },
+        {
           "reference": "exercises/L01-exercises.md",
-          "supports": "原创题目、答案及数学检验"
+          "supports": "题面、公式与答案"
         }
       ],
       "candidates": [
         {
-          "id": "L01-S04B-native",
+          "id": "L01-S04B-chrome",
           "project_id": "L01",
           "status": "adopted",
-          "path": "assets/slides/L01-S04B.png",
-          "sha256": "009eef73bf42e69dffe1dc9434c8cae0330d0865435f5ee678541a0092b38a2b",
+          "path": "assets/candidates/v3/candidates/L01-S04B-chrome.png",
+          "sha256": "c0f59f20418141ae2590b776c9ee77fcdf12d8bcad3d6c8d0971a84e61bc0fbb",
           "source": {
-            "kind": "native_imagegen",
-            "reference": "C:\\Users\\yuxua\\.codex\\generated_images\\01a1ea2b-e592-7ab3-8925-93e73631ba48\\exec-f7177a26-fafb-4c6b-8d61-0f0e5c9cf703.png"
+            "kind": "web_chatgpt",
+            "reference": "https://chatgpt.com/c/6afd0314-4504-83e9-9d4c-57f710dd5101"
           },
           "prompt": {
-            "path": "slides/prompts/L01-S04B-native-v1.md",
-            "version": "native-v1",
-            "sha256": "249a43fa8f8e2dc845f8138d27946415bb6c125f08a65319cd9e7f3ea79216ee"
+            "path": "assets/candidates/v3/prompts/L01-S04B-api-r2.md",
+            "version": "L01-S04B-chrome",
+            "sha256": "99c3d60f99000331e2cca98052ab71657081a20894441efb4f4b819bfb0ea8a9"
           },
           "quality": {
             "rating": "accept",
-            "reason": "逐字目视检查中文、公式、符号、画幅与清晰度"
+            "reason": "两条等式逐符号正确，独立回转图标不改变分配关系。"
           },
           "dimensions": {
             "width_px": 1672,
@@ -584,24 +822,55 @@
           }
         }
       ],
-      "adopted_candidate_id": "L01-S04B-native",
+      "adopted_candidate_id": "L01-S04B-chrome",
       "qa": {
         "facts": "passed",
         "text": "passed",
         "visual": "passed"
       },
       "speaker": {
-        "seconds": 90,
+        "seconds": 75,
         "keywords": [
-          "提取与检验"
+          "例题示范",
+          "写成积，再乘回"
         ],
-        "idea": "【停顿并完成板书】请想一想，括号里的2x和3是凭什么确定的？【停顿5秒，预设：分别与3x相乘，能还原原来的两项】很好，我们是逐项确定剩下的因式。最后还要检验。用分配律乘回去，3x乘2x得到6x的平方，3x乘3得到9x，正好还原原式。提公因式法就是逆用乘法分配律。我们一起整理：先找公因式，再逐项确定商式，最后乘回检验。【指板书复述，并留出观察时间】",
-        "transition": "进入下一教学环节",
-        "notes_text": "提取与检验｜预算90秒。\n【停顿并完成板书】请想一想，括号里的2x和3是凭什么确定的？【停顿5秒，预设：分别与3x相乘，能还原原来的两项】很好，我们是逐项确定剩下的因式。最后还要检验。用分配律乘回去，3x乘2x得到6x的平方，3x乘3得到9x，正好还原原式。提公因式法就是逆用乘法分配律。我们一起整理：先找公因式，再逐项确定商式，最后乘回检验。【指板书复述，并留出观察时间】\n本画面文字：6x²＋9x＝3x(2x＋3)；检验：3x(2x＋3)＝6x²＋9x\n教材依据：沪科版七下8.4，第80—82页，国家中小学智慧教育平台。"
+        "idea": "【预设：2x加3】得到3x乘括号2x加3。【完成板书】用分配律乘回去，3x乘2x得到6x的平方，3x乘3得到9x，正好还原原式。括号内的每一项都对应原式的一项。【停顿，指板书复述】",
+        "transition": "进入下一画面",
+        "notes_text": "例题示范｜写成积，再乘回｜预算 75 秒。\n【预设：2x加3】得到3x乘括号2x加3。【完成板书】用分配律乘回去，3x乘2x得到6x的平方，3x乘3得到9x，正好还原原式。括号内的每一项都对应原式的一项。【停顿，指板书复述】"
+      },
+      "selection": {
+        "adopted": {
+          "id": "L01-S04B-chrome",
+          "sha256": "c0f59f20418141ae2590b776c9ee77fcdf12d8bcad3d6c8d0971a84e61bc0fbb",
+          "lane": "web_chatgpt"
+        },
+        "reason": "两条等式逐符号正确，独立回转图标不改变分配关系。",
+        "reviews": [
+          {
+            "id": "L01-S04B-api-r1",
+            "page_id": "L01-S04B",
+            "sha256": "9ab527973fd4b9ab3ce37ac5228586e8c64d8e2eb60b047a6e9002fcf41a31cd",
+            "passed": false,
+            "adopted": false,
+            "findings": "两条主等式正确，附图却把检验箭头画到加号，误解分配方向。",
+            "reviewer": "Codex visual review",
+            "reviewed_at": "2026-11-18T01:52:02.215Z"
+          },
+          {
+            "id": "L01-S04B-chrome",
+            "page_id": "L01-S04B",
+            "sha256": "c0f59f20418141ae2590b776c9ee77fcdf12d8bcad3d6c8d0971a84e61bc0fbb",
+            "passed": true,
+            "adopted": true,
+            "findings": "两条等式逐符号正确，独立回转图标不改变分配关系。",
+            "reviewer": "Codex visual review",
+            "reviewed_at": "2026-11-18T01:52:02.215Z"
+          }
+        ]
       },
       "final_render": {
-        "path": "assets/final-renders/08-L01-提取与检验.png",
-        "sha256": "6d3acd25172d463cf8349baf6faa318cb47bd84c4893d703561132cc14963ccf",
+        "path": "assets/final-renders/v3/08-L01-写成积，再乘回.png",
+        "sha256": "6bc752da4632c7caecb980df65e6a0111c01960e82bf87b715ae38a91f4fdddb",
         "qa": {
           "facts": "passed",
           "text": "passed",
@@ -609,7 +878,7 @@
         },
         "reviewed": true,
         "reviewer": "Codex visual review",
-        "reviewed_at": "2026-11-18T00:16:55.106744+08:00",
+        "reviewed_at": "2026-11-18T09:55:45.878368+08:00",
         "projection": {
           "width_px": 1920,
           "height_px": 1080
@@ -621,45 +890,51 @@
       "page_id": "L01-S05A",
       "project_id": "L01",
       "status": "delivered",
-      "topic": "商式中的1",
+      "topic": "括号里漏了什么？",
       "visible_text": [
-        "商式中的1",
-        "待判断：3x²＋3x＝3x·x",
-        "展开右边，能还原原式吗？"
+        "易错辨析",
+        "括号里漏了什么？",
+        "待判断",
+        "3x² + 3x = 3x · x",
+        "请展开右边，和原式逐项比较。"
       ],
       "evidence": [
         {
+          "reference": "lesson-plans/L01-script.md",
+          "supports": "讲述与提问顺序"
+        },
+        {
           "reference": "exercises/L01-exercises.md",
-          "supports": "原创题目、答案及数学检验"
+          "supports": "题面、公式与答案"
         }
       ],
       "candidates": [
         {
-          "id": "L01-S05A-native",
+          "id": "L01-S05A-api-r1",
           "project_id": "L01",
           "status": "adopted",
-          "path": "assets/slides/L01-S05A.png",
-          "sha256": "976093b085a9ac9347a6a6c72227a1a0e02d0dced2a999f00c7cc987a37047ec",
+          "path": "assets/candidates/v3/candidates/L01-S05A-api-r1.png",
+          "sha256": "eddc62a6248ff2950e4e4e87062b5bb0eeb408287bd0597421249a50c5daae43",
           "source": {
-            "kind": "native_imagegen",
-            "reference": "C:\\Users\\yuxua\\.codex\\generated_images\\01a1ea2b-e592-7ab3-8925-93e73631ba48\\exec-f28d8453-2c40-4fc0-8301-03da70659612.png"
+            "kind": "configured_api",
+            "reference": "Configured Windows image channel"
           },
           "prompt": {
-            "path": "slides/prompts/L01-S05A-native-v1.md",
-            "version": "native-v1",
-            "sha256": "c01a562cc4c11fa1364b4be03afbebfa144cd80d8e0b02e1430f2dc605f77365"
+            "path": "assets/candidates/v3/prompts/L01-S05A-api-r1.md",
+            "version": "L01-S05A-api-r1",
+            "sha256": "1c4bcf9abde0abf11113b647dc4529b8cc948bcf65cec4409422c0e13684206b"
           },
           "quality": {
             "rating": "accept",
-            "reason": "逐字目视检查中文、公式、符号、画幅与清晰度"
+            "reason": "错例标为待判断，提问清楚，答案留到反馈页。"
           },
           "dimensions": {
-            "width_px": 1672,
-            "height_px": 941
+            "width_px": 2048,
+            "height_px": 1152
           }
         }
       ],
-      "adopted_candidate_id": "L01-S05A-native",
+      "adopted_candidate_id": "L01-S05A-api-r1",
       "qa": {
         "facts": "passed",
         "text": "passed",
@@ -668,15 +943,36 @@
       "speaker": {
         "seconds": 40,
         "keywords": [
-          "商式中的1"
+          "易错辨析",
+          "括号里漏了什么？"
         ],
-        "idea": "有位同学写出这样一个结果：3x的平方加3x，等于3x乘x。这是一个待判断的式子。请用刚才的办法检验。【停顿5秒】右边乘回去，只有3x的平方，原来的加3x没有了。",
-        "transition": "进入本环节反馈",
-        "notes_text": "商式中的1｜预算40秒。\n有位同学写出这样一个结果：3x的平方加3x，等于3x乘x。这是一个待判断的式子。请用刚才的办法检验。【停顿5秒】右边乘回去，只有3x的平方，原来的加3x没有了。\n本画面文字：待判断：3x²＋3x＝3x·x；展开右边，能还原原式吗？\n教材依据：沪科版七下8.4，第80—82页，国家中小学智慧教育平台。"
+        "idea": "请看一个待判断的解法。3x的平方加3x，被写成了3x乘x。右边展开能还原左边吗？【停顿5秒】你能指出少了哪一项吗？",
+        "transition": "进入下一画面",
+        "notes_text": "易错辨析｜括号里漏了什么？｜预算 40 秒。\n请看一个待判断的解法。3x的平方加3x，被写成了3x乘x。右边展开能还原左边吗？【停顿5秒】你能指出少了哪一项吗？"
+      },
+      "selection": {
+        "adopted": {
+          "id": "L01-S05A-api-r1",
+          "sha256": "eddc62a6248ff2950e4e4e87062b5bb0eeb408287bd0597421249a50c5daae43",
+          "lane": "configured_api"
+        },
+        "reason": "错例标为待判断，提问清楚，答案留到反馈页。",
+        "reviews": [
+          {
+            "id": "L01-S05A-api-r1",
+            "page_id": "L01-S05A",
+            "sha256": "eddc62a6248ff2950e4e4e87062b5bb0eeb408287bd0597421249a50c5daae43",
+            "passed": true,
+            "adopted": true,
+            "findings": "错例标为待判断，提问清楚，答案留到反馈页。",
+            "reviewer": "Codex visual review",
+            "reviewed_at": "2026-11-18T01:52:02.215Z"
+          }
+        ]
       },
       "final_render": {
-        "path": "assets/final-renders/09-L01-商式中的1.png",
-        "sha256": "3d9f8c87247e02e3da0549b6d106895c5ff247355c71660dffa22b9f48c45e7f",
+        "path": "assets/final-renders/v3/09-L01-括号里漏了什么？.png",
+        "sha256": "cffe4452eb5111eff47b4fc6c6ad323c3bdcde569e3e771bb9cc75241533a50d",
         "qa": {
           "facts": "passed",
           "text": "passed",
@@ -684,7 +980,7 @@
         },
         "reviewed": true,
         "reviewer": "Codex visual review",
-        "reviewed_at": "2026-11-18T00:16:55.106744+08:00",
+        "reviewed_at": "2026-11-18T09:55:45.878368+08:00",
         "projection": {
           "width_px": 1920,
           "height_px": 1080
@@ -696,45 +992,51 @@
       "page_id": "L01-S05B",
       "project_id": "L01",
       "status": "delivered",
-      "topic": "商式中的1",
+      "topic": "保留括号里的 1",
       "visible_text": [
-        "商式中的1",
-        "3x²＋3x＝3x(x＋1)",
-        "因为3x＝3x·1，括号中的1要保留"
+        "易错辨析",
+        "保留括号里的 1",
+        "3x = 3x · 1",
+        "3x² + 3x = 3x(x + 1)",
+        "当某项等于公因式时，商是 1。"
       ],
       "evidence": [
         {
+          "reference": "lesson-plans/L01-script.md",
+          "supports": "讲述与提问顺序"
+        },
+        {
           "reference": "exercises/L01-exercises.md",
-          "supports": "原创题目、答案及数学检验"
+          "supports": "题面、公式与答案"
         }
       ],
       "candidates": [
         {
-          "id": "L01-S05B-native",
+          "id": "L01-S05B-api-r2",
           "project_id": "L01",
           "status": "adopted",
-          "path": "assets/slides/L01-S05B.png",
-          "sha256": "fd6ebae31acc3202b6ca8c9effd55acf93fbf999398380709b69f9dbf7a7490d",
+          "path": "assets/candidates/v3/candidates/L01-S05B-api-r2.png",
+          "sha256": "c7e1f24da5ee4a7b8dcb6e61e75db8e092252cabc881201e16d81019f11c80c6",
           "source": {
-            "kind": "native_imagegen",
-            "reference": "C:\\Users\\yuxua\\.codex\\generated_images\\01a1ea2b-e592-7ab3-8925-93e73631ba48\\exec-a1d866bf-391b-48f8-b5f3-66370e681722.png"
+            "kind": "configured_api",
+            "reference": "Configured Windows image channel"
           },
           "prompt": {
-            "path": "slides/prompts/L01-S05B-native-v1.md",
-            "version": "native-v1",
-            "sha256": "7fdb36c787422bcef0e45d27d27665a5713d6d96a4044a712996e70920c09804"
+            "path": "assets/candidates/v3/prompts/L01-S05B-api-r2.md",
+            "version": "L01-S05B-api-r2",
+            "sha256": "4fbcb9f71441109b17d4129bd407bf7f4b6726adfb07fe1f3e41ae5dedfd2d93"
           },
           "quality": {
             "rating": "accept",
-            "reason": "逐字目视检查中文、公式、符号、画幅与清晰度"
+            "reason": "依据与正确分解均正确，圈出了第一式的 1，第二式的 1 仍清晰。"
           },
           "dimensions": {
-            "width_px": 1672,
-            "height_px": 941
+            "width_px": 2048,
+            "height_px": 1152
           }
         }
       ],
-      "adopted_candidate_id": "L01-S05B-native",
+      "adopted_candidate_id": "L01-S05B-api-r2",
       "qa": {
         "facts": "passed",
         "text": "passed",
@@ -743,15 +1045,36 @@
       "speaker": {
         "seconds": 50,
         "keywords": [
-          "商式中的1"
+          "易错辨析",
+          "保留括号里的 1"
         ],
-        "idea": "问题出在哪里？因为原式第二项3x等于3x乘1，提出3x以后，括号里对应的是1。正确结果是3x乘括号x加1。【板书并圈出1】当某一项与公因式相同时，剩下的因式是1。请再展开一次，确认两项都能还原。",
-        "transition": "进入下一教学环节",
-        "notes_text": "商式中的1｜预算50秒。\n问题出在哪里？因为原式第二项3x等于3x乘1，提出3x以后，括号里对应的是1。正确结果是3x乘括号x加1。【板书并圈出1】当某一项与公因式相同时，剩下的因式是1。请再展开一次，确认两项都能还原。\n本画面文字：3x²＋3x＝3x(x＋1)；因为3x＝3x·1，括号中的1要保留\n教材依据：沪科版七下8.4，第80—82页，国家中小学智慧教育平台。"
+        "idea": "右边展开只有3x的平方，少了3x。第二项3x等于3x乘1，提出3x以后，括号里对应的是1。正确结果是3x乘括号x加1。【板书并圈出1，再乘回核对】",
+        "transition": "进入下一画面",
+        "notes_text": "易错辨析｜保留括号里的 1｜预算 50 秒。\n右边展开只有3x的平方，少了3x。第二项3x等于3x乘1，提出3x以后，括号里对应的是1。正确结果是3x乘括号x加1。【板书并圈出1，再乘回核对】"
+      },
+      "selection": {
+        "adopted": {
+          "id": "L01-S05B-api-r2",
+          "sha256": "c7e1f24da5ee4a7b8dcb6e61e75db8e092252cabc881201e16d81019f11c80c6",
+          "lane": "configured_api"
+        },
+        "reason": "依据与正确分解均正确，圈出了第一式的 1，第二式的 1 仍清晰。",
+        "reviews": [
+          {
+            "id": "L01-S05B-api-r2",
+            "page_id": "L01-S05B",
+            "sha256": "c7e1f24da5ee4a7b8dcb6e61e75db8e092252cabc881201e16d81019f11c80c6",
+            "passed": true,
+            "adopted": true,
+            "findings": "依据与正确分解均正确，圈出了第一式的 1，第二式的 1 仍清晰。",
+            "reviewer": "Codex visual review",
+            "reviewed_at": "2026-11-18T01:52:02.215Z"
+          }
+        ]
       },
       "final_render": {
-        "path": "assets/final-renders/10-L01-商式中的1.png",
-        "sha256": "68343160b7166572a0398c74437fe0a08e19604d4d9f13a5cd04604f4b7ed617",
+        "path": "assets/final-renders/v3/10-L01-保留括号里的 1.png",
+        "sha256": "d2557c9770de0a31099d8e03d5c9ff7f4b5dcc89a2e5dd546e55b2a2193cab0e",
         "qa": {
           "facts": "passed",
           "text": "passed",
@@ -759,7 +1082,7 @@
         },
         "reviewed": true,
         "reviewer": "Codex visual review",
-        "reviewed_at": "2026-11-18T00:16:55.110213+08:00",
+        "reviewed_at": "2026-11-18T09:55:45.878368+08:00",
         "projection": {
           "width_px": 1920,
           "height_px": 1080
@@ -771,45 +1094,51 @@
       "page_id": "L01-S06A",
       "project_id": "L01",
       "status": "delivered",
-      "topic": "当堂检测",
+      "topic": "独立试一试",
       "visible_text": [
         "当堂检测",
-        "分解因式：8a²－12a",
-        "先找公因式，再写结果并检验"
+        "独立试一试",
+        "分解因式：8a² − 12a",
+        "先找公因式，再写成整式的积。",
+        "完成后，用展开检查。"
       ],
       "evidence": [
         {
+          "reference": "lesson-plans/L01-script.md",
+          "supports": "讲述与提问顺序"
+        },
+        {
           "reference": "exercises/L01-exercises.md",
-          "supports": "原创题目、答案及数学检验"
+          "supports": "题面、公式与答案"
         }
       ],
       "candidates": [
         {
-          "id": "L01-S06A-native",
+          "id": "L01-S06A-api-r1",
           "project_id": "L01",
           "status": "adopted",
-          "path": "assets/slides/L01-S06A.png",
-          "sha256": "131f3a98d58ca6a25ce5064ab20009129ed769e959db312d0f808b89833ef508",
+          "path": "assets/candidates/v3/candidates/L01-S06A-api-r1.png",
+          "sha256": "4a3604d4a3fdf06bd3299b84b036989644b7ca7386ce758efc042f657fc927f3",
           "source": {
-            "kind": "native_imagegen",
-            "reference": "C:\\Users\\yuxua\\.codex\\generated_images\\01a1ea2b-e592-7ab3-8925-93e73631ba48\\exec-c885b6ef-f69e-4ad0-959b-83af8a664530.png"
+            "kind": "configured_api",
+            "reference": "Configured Windows image channel"
           },
           "prompt": {
-            "path": "slides/prompts/L01-S06A-native-v1.md",
-            "version": "native-v1",
-            "sha256": "fc4f2b4baef0d1007346516b7df1eadc6c80a44ba063bf6d46f3b69ca7cc7dc0"
+            "path": "assets/candidates/v3/prompts/L01-S06A-api-r1.md",
+            "version": "L01-S06A-api-r1",
+            "sha256": "bc4a769bcd95e45440710e02ab1bb87c3fa2438185350e0a53a338eee630759e"
           },
           "quality": {
             "rating": "accept",
-            "reason": "逐字目视检查中文、公式、符号、画幅与清晰度"
+            "reason": "检测题、负号及作答要求清楚，右侧为练习示意，未提前显示答案。"
           },
           "dimensions": {
-            "width_px": 1672,
-            "height_px": 941
+            "width_px": 2048,
+            "height_px": 1152
           }
         }
       ],
-      "adopted_candidate_id": "L01-S06A-native",
+      "adopted_candidate_id": "L01-S06A-api-r1",
       "qa": {
         "facts": "passed",
         "text": "passed",
@@ -818,15 +1147,36 @@
       "speaker": {
         "seconds": 50,
         "keywords": [
-          "当堂检测"
+          "当堂检测",
+          "独立试一试"
         ],
-        "idea": "现在请独立完成一道题：分解因式8a的平方减12a。先想共同的系数，再看相同的字母。【独立思考与书写20秒】公因式可以选4a。8a的平方等于4a乘2a，12a等于4a乘3，所以结果是4a乘括号2a减3。",
-        "transition": "进入本环节反馈",
-        "notes_text": "当堂检测｜预算50秒。\n现在请独立完成一道题：分解因式8a的平方减12a。先想共同的系数，再看相同的字母。【独立思考与书写20秒】公因式可以选4a。8a的平方等于4a乘2a，12a等于4a乘3，所以结果是4a乘括号2a减3。\n本画面文字：分解因式：8a²－12a；先找公因式，再写结果并检验\n教材依据：沪科版七下8.4，第80—82页，国家中小学智慧教育平台。"
+        "idea": "请独立分解8a的平方减12a。先找公因式，再写成积并展开检验。【独立思考与书写约20秒】",
+        "transition": "进入下一画面",
+        "notes_text": "当堂检测｜独立试一试｜预算 50 秒。\n请独立分解8a的平方减12a。先找公因式，再写成积并展开检验。【独立思考与书写约20秒】"
+      },
+      "selection": {
+        "adopted": {
+          "id": "L01-S06A-api-r1",
+          "sha256": "4a3604d4a3fdf06bd3299b84b036989644b7ca7386ce758efc042f657fc927f3",
+          "lane": "configured_api"
+        },
+        "reason": "检测题、负号及作答要求清楚，右侧为练习示意，未提前显示答案。",
+        "reviews": [
+          {
+            "id": "L01-S06A-api-r1",
+            "page_id": "L01-S06A",
+            "sha256": "4a3604d4a3fdf06bd3299b84b036989644b7ca7386ce758efc042f657fc927f3",
+            "passed": true,
+            "adopted": true,
+            "findings": "检测题、负号及作答要求清楚，右侧为练习示意，未提前显示答案。",
+            "reviewer": "Codex visual review",
+            "reviewed_at": "2026-11-18T01:52:02.215Z"
+          }
+        ]
       },
       "final_render": {
-        "path": "assets/final-renders/11-L01-当堂检测.png",
-        "sha256": "1b3826da4131450592d309f1ce4d373f6d587290017d9869a8b51717a814218a",
+        "path": "assets/final-renders/v3/11-L01-独立试一试.png",
+        "sha256": "4317aad4a55999ad24ad9ad9b9de9ce31531d508de93ea8d9b7490592feaaa8f",
         "qa": {
           "facts": "passed",
           "text": "passed",
@@ -834,7 +1184,7 @@
         },
         "reviewed": true,
         "reviewer": "Codex visual review",
-        "reviewed_at": "2026-11-18T00:16:55.110213+08:00",
+        "reviewed_at": "2026-11-18T09:55:45.878368+08:00",
         "projection": {
           "width_px": 1920,
           "height_px": 1080
@@ -846,45 +1196,51 @@
       "page_id": "L01-S06B",
       "project_id": "L01",
       "status": "delivered",
-      "topic": "当堂检测",
+      "topic": "留住括号里的负号",
       "visible_text": [
         "当堂检测",
-        "8a²－12a＝4a(2a－3)",
-        "检验：4a(2a－3)＝8a²－12a"
+        "留住括号里的负号",
+        "8a² − 12a = 4a(2a − 3)",
+        "检验：4a(2a − 3) = 8a² − 12a",
+        "第二项的商是 −3，负号要保留。"
       ],
       "evidence": [
         {
+          "reference": "lesson-plans/L01-script.md",
+          "supports": "讲述与提问顺序"
+        },
+        {
           "reference": "exercises/L01-exercises.md",
-          "supports": "原创题目、答案及数学检验"
+          "supports": "题面、公式与答案"
         }
       ],
       "candidates": [
         {
-          "id": "L01-S06B-native",
+          "id": "L01-S06B-api-r2",
           "project_id": "L01",
           "status": "adopted",
-          "path": "assets/slides/L01-S06B.png",
-          "sha256": "43ec8c2c125143403d210a9df25219a33d8e7ecf76fa0d828b96112e986679f4",
+          "path": "assets/candidates/v3/candidates/L01-S06B-api-r2.png",
+          "sha256": "6eed5ee7abd73f5226635f48bfc7acd48901b0d2ffe8bf227603edc7510093cd",
           "source": {
-            "kind": "native_imagegen",
-            "reference": "C:\\Users\\yuxua\\.codex\\generated_images\\01a1ea2b-e592-7ab3-8925-93e73631ba48\\exec-053a3183-9faf-4b70-8174-5c5bf00d5316.png"
+            "kind": "configured_api",
+            "reference": "Configured Windows image channel"
           },
           "prompt": {
-            "path": "slides/prompts/L01-S06B-native-v1.md",
-            "version": "native-v1",
-            "sha256": "2258de3883abc40081248c4651a02e450dd892511ea685eebd5960678ba4677a"
+            "path": "assets/candidates/v3/prompts/L01-S06B-api-r2.md",
+            "version": "L01-S06B-api-r2",
+            "sha256": "08f4fc9051ee9c7d9609383292f0b9032c51d58ac35dadd2e0d8ef6ff6829eb4"
           },
           "quality": {
             "rating": "accept",
-            "reason": "逐字目视检查中文、公式、符号、画幅与清晰度"
+            "reason": "分解和乘回检验各自正确，括号内负号和商 −3 清楚。"
           },
           "dimensions": {
-            "width_px": 1672,
-            "height_px": 941
+            "width_px": 2048,
+            "height_px": 1152
           }
         }
       ],
-      "adopted_candidate_id": "L01-S06B-native",
+      "adopted_candidate_id": "L01-S06B-api-r2",
       "qa": {
         "facts": "passed",
         "text": "passed",
@@ -893,15 +1249,46 @@
       "speaker": {
         "seconds": 30,
         "keywords": [
-          "当堂检测"
+          "当堂检测",
+          "留住括号里的负号"
         ],
-        "idea": "请注意括号里的减号。把它乘回去，是否等于原式？【停顿5秒】如果你的结果相同，并且能乘回检验，这道题就完成了。",
-        "transition": "进入下一教学环节",
-        "notes_text": "当堂检测｜预算30秒。\n请注意括号里的减号。把它乘回去，是否等于原式？【停顿5秒】如果你的结果相同，并且能乘回检验，这道题就完成了。\n本画面文字：8a²－12a＝4a(2a－3)；检验：4a(2a－3)＝8a²－12a\n教材依据：沪科版七下8.4，第80—82页，国家中小学智慧教育平台。"
+        "idea": "公因式是4a。两项分别除以4a，得到2a和负3。写成4a乘括号2a减3，乘回去恰好还原原式。【右栏板书结果】",
+        "transition": "进入下一画面",
+        "notes_text": "当堂检测｜留住括号里的负号｜预算 30 秒。\n公因式是4a。两项分别除以4a，得到2a和负3。写成4a乘括号2a减3，乘回去恰好还原原式。【右栏板书结果】"
+      },
+      "selection": {
+        "adopted": {
+          "id": "L01-S06B-api-r2",
+          "sha256": "6eed5ee7abd73f5226635f48bfc7acd48901b0d2ffe8bf227603edc7510093cd",
+          "lane": "configured_api"
+        },
+        "reason": "分解和乘回检验各自正确，括号内负号和商 −3 清楚。",
+        "reviews": [
+          {
+            "id": "L01-S06B-api-r1",
+            "page_id": "L01-S06B",
+            "sha256": "2549d98dc523a10cf2e3bee59c51a5429b794bf7210793556979b38ed55b708e",
+            "passed": false,
+            "adopted": false,
+            "findings": "结果与检验正确，额外分支不能清楚表达公因式乘回各商式。",
+            "reviewer": "Codex visual review",
+            "reviewed_at": "2026-11-18T01:52:02.215Z"
+          },
+          {
+            "id": "L01-S06B-api-r2",
+            "page_id": "L01-S06B",
+            "sha256": "6eed5ee7abd73f5226635f48bfc7acd48901b0d2ffe8bf227603edc7510093cd",
+            "passed": true,
+            "adopted": true,
+            "findings": "分解和乘回检验各自正确，括号内负号和商 −3 清楚。",
+            "reviewer": "Codex visual review",
+            "reviewed_at": "2026-11-18T01:52:02.215Z"
+          }
+        ]
       },
       "final_render": {
-        "path": "assets/final-renders/12-L01-当堂检测.png",
-        "sha256": "64f4b942eb63d151b5afbd04708e68e4a292385b8d0146b02cfd692d4190a024",
+        "path": "assets/final-renders/v3/12-L01-留住括号里的负号.png",
+        "sha256": "9aa24d9dfa72d7e1736f81bcb4c076c66704b0fe681bae9b77b41946246e7510",
         "qa": {
           "facts": "passed",
           "text": "passed",
@@ -909,7 +1296,7 @@
         },
         "reviewed": true,
         "reviewer": "Codex visual review",
-        "reviewed_at": "2026-11-18T00:16:55.110213+08:00",
+        "reviewed_at": "2026-11-18T09:55:45.878368+08:00",
         "projection": {
           "width_px": 1920,
           "height_px": 1080
@@ -921,45 +1308,51 @@
       "page_id": "L01-S07A",
       "project_id": "L01",
       "status": "delivered",
-      "topic": "课堂归纳",
+      "topic": "用自己的话说一遍",
       "visible_text": [
-        "课堂归纳",
-        "提公因式法的关键是什么？",
-        "怎样确认结果正确？"
+        "课堂小结",
+        "用自己的话说一遍",
+        "怎样找公因式？",
+        "括号里的各项从哪里来？",
+        "怎样检查有没有漏项？"
       ],
       "evidence": [
         {
+          "reference": "lesson-plans/L01-script.md",
+          "supports": "讲述与提问顺序"
+        },
+        {
           "reference": "exercises/L01-exercises.md",
-          "supports": "原创题目、答案及数学检验"
+          "supports": "题面、公式与答案"
         }
       ],
       "candidates": [
         {
-          "id": "L01-S07A-native",
+          "id": "L01-S07A-api-r1",
           "project_id": "L01",
           "status": "adopted",
-          "path": "assets/slides/L01-S07A.png",
-          "sha256": "ef473a2261af1b0d967250c07cec0425051a2d0445a54dda51bbb79f36b7e244",
+          "path": "assets/candidates/v3/candidates/L01-S07A-api-r1.png",
+          "sha256": "02c7574577663e769f1c4b512f9b632b7421aff3e4f051736ba714105b09559d",
           "source": {
-            "kind": "native_imagegen",
-            "reference": "C:\\Users\\yuxua\\.codex\\generated_images\\01a1ea2b-e592-7ab3-8925-93e73631ba48\\exec-df9e2828-63da-4c4e-8a64-79adc9d76266.png"
+            "kind": "configured_api",
+            "reference": "Configured Windows image channel"
           },
           "prompt": {
-            "path": "slides/prompts/L01-S07A-native-v1.md",
-            "version": "native-v1",
-            "sha256": "56697bdc7fb5c5d459fb8a78d6cd1b71420f3320fd09d018720d5f84c8933650"
+            "path": "assets/candidates/v3/prompts/L01-S07A-api-r1.md",
+            "version": "L01-S07A-api-r1",
+            "sha256": "9353ea5346690847a33b160c877534437a34fc2c7d05a22aa2a4d7a776e3279d"
           },
           "quality": {
             "rating": "accept",
-            "reason": "逐字目视检查中文、公式、符号、画幅与清晰度"
+            "reason": "三项复述提问完整，图标作为线索，答案留到下一页。"
           },
           "dimensions": {
-            "width_px": 1672,
-            "height_px": 941
+            "width_px": 2048,
+            "height_px": 1152
           }
         }
       ],
-      "adopted_candidate_id": "L01-S07A-native",
+      "adopted_candidate_id": "L01-S07A-api-r1",
       "qa": {
         "facts": "passed",
         "text": "passed",
@@ -968,15 +1361,36 @@
       "speaker": {
         "seconds": 20,
         "keywords": [
-          "课堂归纳"
+          "课堂小结",
+          "用自己的话说一遍"
         ],
-        "idea": "今天我们把乘法分配律反过来使用，学习了提公因式法。请看板书，回想三个动作：找公因式，逐项确定商式，乘回检验。",
-        "transition": "进入本环节反馈",
-        "notes_text": "课堂归纳｜预算20秒。\n今天我们把乘法分配律反过来使用，学习了提公因式法。请看板书，回想三个动作：找公因式，逐项确定商式，乘回检验。\n本画面文字：提公因式法的关键是什么？；怎样确认结果正确？\n教材依据：沪科版七下8.4，第80—82页，国家中小学智慧教育平台。"
+        "idea": "【指向黑板中栏】提公因式法怎样做？最后怎么检查没有漏项？【停顿】",
+        "transition": "进入下一画面",
+        "notes_text": "课堂小结｜用自己的话说一遍｜预算 20 秒。\n【指向黑板中栏】提公因式法怎样做？最后怎么检查没有漏项？【停顿】"
+      },
+      "selection": {
+        "adopted": {
+          "id": "L01-S07A-api-r1",
+          "sha256": "02c7574577663e769f1c4b512f9b632b7421aff3e4f051736ba714105b09559d",
+          "lane": "configured_api"
+        },
+        "reason": "三项复述提问完整，图标作为线索，答案留到下一页。",
+        "reviews": [
+          {
+            "id": "L01-S07A-api-r1",
+            "page_id": "L01-S07A",
+            "sha256": "02c7574577663e769f1c4b512f9b632b7421aff3e4f051736ba714105b09559d",
+            "passed": true,
+            "adopted": true,
+            "findings": "三项复述提问完整，图标作为线索，答案留到下一页。",
+            "reviewer": "Codex visual review",
+            "reviewed_at": "2026-11-18T01:52:02.215Z"
+          }
+        ]
       },
       "final_render": {
-        "path": "assets/final-renders/13-L01-课堂归纳.png",
-        "sha256": "d94c9009c4a081f74438fbe7f7c430318590fcef397cafc4245fc65a3bbdb964",
+        "path": "assets/final-renders/v3/13-L01-用自己的话说一遍.png",
+        "sha256": "43ffe86ee87a26b52c7bb68eafe084aafd5fd4b6e7974835970657d10163f65a",
         "qa": {
           "facts": "passed",
           "text": "passed",
@@ -984,7 +1398,7 @@
         },
         "reviewed": true,
         "reviewer": "Codex visual review",
-        "reviewed_at": "2026-11-18T00:16:55.110213+08:00",
+        "reviewed_at": "2026-11-18T09:55:45.878368+08:00",
         "projection": {
           "width_px": 1920,
           "height_px": 1080
@@ -996,37 +1410,44 @@
       "page_id": "L01-S07B",
       "project_id": "L01",
       "status": "delivered",
-      "topic": "课堂归纳",
+      "topic": "提公因式法三步",
       "visible_text": [
-        "课堂归纳",
-        "找公因式　逐项确定商式　乘回检验",
-        "某一项等于公因式时，商式中的1要保留"
+        "课堂小结",
+        "提公因式法三步",
+        "找公因式",
+        "逐项求商写成积",
+        "乘回检验",
+        "某项等于公因式时，商 1 要留在括号里。"
       ],
       "evidence": [
         {
+          "reference": "lesson-plans/L01-script.md",
+          "supports": "讲述与提问顺序"
+        },
+        {
           "reference": "exercises/L01-exercises.md",
-          "supports": "原创题目、答案及数学检验"
+          "supports": "题面、公式与答案"
         }
       ],
       "candidates": [
         {
-          "id": "L01-S07B-native",
+          "id": "L01-S07B-chrome",
           "project_id": "L01",
           "status": "adopted",
-          "path": "assets/slides/L01-S07B.png",
-          "sha256": "cbb9b1d4ca7de14934a420afee26c0ee75d6bbcc8959566db5a8684809e192f4",
+          "path": "assets/candidates/v3/candidates/L01-S07B-chrome.png",
+          "sha256": "548be7dd57a20d37050476d72dcb6cc3515c254f6d267e76adb870620f20d42c",
           "source": {
-            "kind": "native_imagegen",
-            "reference": "C:\\Users\\yuxua\\.codex\\generated_images\\01a1ea2b-e592-7ab3-8925-93e73631ba48\\exec-3b339f84-f422-4259-9e73-f1b5463b55db.png"
+            "kind": "web_chatgpt",
+            "reference": "https://chatgpt.com/c/6afd0356-2668-83ea-bc55-416483c269d1"
           },
           "prompt": {
-            "path": "slides/prompts/L01-S07B-native-v1.md",
-            "version": "native-v1",
-            "sha256": "704832c8741755077c805f64f254c6415eeade77558e56f2b3dbbe210e0358f0"
+            "path": "assets/candidates/v3/prompts/L01-S07B-api-r2.md",
+            "version": "L01-S07B-chrome",
+            "sha256": "a52758596c4dccefdc76b7bf9c3c40f2b36b74d0594560d54e4f0de60af07f76"
           },
           "quality": {
             "rating": "accept",
-            "reason": "逐字目视检查中文、公式、符号、画幅与清晰度"
+            "reason": "三步及商 1 提醒准确，双箭头向右，三个图标和步骤对应。"
           },
           "dimensions": {
             "width_px": 1672,
@@ -1034,7 +1455,7 @@
           }
         }
       ],
-      "adopted_candidate_id": "L01-S07B-native",
+      "adopted_candidate_id": "L01-S07B-chrome",
       "qa": {
         "facts": "passed",
         "text": "passed",
@@ -1043,15 +1464,46 @@
       "speaker": {
         "seconds": 20,
         "keywords": [
-          "课堂归纳"
+          "课堂小结",
+          "提公因式法三步"
         ],
-        "idea": "还要特别留意：当某一项就是公因式时，剩下的1要保留。课后请完成备选题10m的平方n减15mn的平方，并用展开检验自己的结果。这节课就到这里。",
-        "transition": "课堂结束",
-        "notes_text": "课堂归纳｜预算20秒。\n还要特别留意：当某一项就是公因式时，剩下的1要保留。课后请完成备选题10m的平方n减15mn的平方，并用展开检验自己的结果。这节课就到这里。\n本画面文字：找公因式　逐项确定商式　乘回检验；某一项等于公因式时，商式中的1要保留\n教材依据：沪科版七下8.4，第80—82页，国家中小学智慧教育平台。"
+        "idea": "先找公因式，再逐项相除写成积，最后乘回检验。某项等于公因式时，商是1，要留在括号里。【完成底栏板书】",
+        "transition": "进入下一画面",
+        "notes_text": "课堂小结｜提公因式法三步｜预算 20 秒。\n先找公因式，再逐项相除写成积，最后乘回检验。某项等于公因式时，商是1，要留在括号里。【完成底栏板书】"
+      },
+      "selection": {
+        "adopted": {
+          "id": "L01-S07B-chrome",
+          "sha256": "548be7dd57a20d37050476d72dcb6cc3515c254f6d267e76adb870620f20d42c",
+          "lane": "web_chatgpt"
+        },
+        "reason": "三步及商 1 提醒准确，双箭头向右，三个图标和步骤对应。",
+        "reviews": [
+          {
+            "id": "L01-S07B-api-r1",
+            "page_id": "L01-S07B",
+            "sha256": "ac6b93a46882d20c18074c86fcb4097603e991d8090ccbf76ddecff9b00341e1",
+            "passed": false,
+            "adopted": false,
+            "findings": "生成了超出原稿的新多字母例题，干扰 20 秒的小结和独立作业。",
+            "reviewer": "Codex visual review",
+            "reviewed_at": "2026-11-18T01:52:02.215Z"
+          },
+          {
+            "id": "L01-S07B-chrome",
+            "page_id": "L01-S07B",
+            "sha256": "548be7dd57a20d37050476d72dcb6cc3515c254f6d267e76adb870620f20d42c",
+            "passed": true,
+            "adopted": true,
+            "findings": "三步及商 1 提醒准确，双箭头向右，三个图标和步骤对应。",
+            "reviewer": "Codex visual review",
+            "reviewed_at": "2026-11-18T01:52:02.215Z"
+          }
+        ]
       },
       "final_render": {
-        "path": "assets/final-renders/14-L01-课堂归纳.png",
-        "sha256": "9a11a7d3b5cffc5a00da7971bc585c2c0215d3eb376eb2101858d0a0265c3825",
+        "path": "assets/final-renders/v3/14-L01-提公因式法三步.png",
+        "sha256": "903c723a54780f370bd5469632c27d2c1b575a8d6f2ca71189f0e80090d359c5",
         "qa": {
           "facts": "passed",
           "text": "passed",
@@ -1059,7 +1511,109 @@
         },
         "reviewed": true,
         "reviewer": "Codex visual review",
-        "reviewed_at": "2026-11-18T00:16:55.114734+08:00",
+        "reviewed_at": "2026-11-18T09:55:45.878368+08:00",
+        "projection": {
+          "width_px": 1920,
+          "height_px": 1080
+        }
+      }
+    },
+    {
+      "page_number": 15,
+      "page_id": "L01-S08A",
+      "project_id": "L01",
+      "status": "delivered",
+      "topic": "巩固练习（选做）",
+      "visible_text": [
+        "课后作业",
+        "巩固练习（选做）",
+        "分解因式：10m²n − 15mn²",
+        "找出公因式，写成整式的积。",
+        "最后用展开检验。"
+      ],
+      "evidence": [
+        {
+          "reference": "lesson-plans/L01-script.md",
+          "supports": "讲述与提问顺序"
+        },
+        {
+          "reference": "exercises/L01-exercises.md",
+          "supports": "题面、公式与答案"
+        }
+      ],
+      "candidates": [
+        {
+          "id": "L01-S08A-api-r2",
+          "project_id": "L01",
+          "status": "adopted",
+          "path": "assets/candidates/v3/candidates/L01-S08A-api-r2.png",
+          "sha256": "551d7fb7afe5039d349529f41f79ea7abaf454ae72abb5006571368619801cff",
+          "source": {
+            "kind": "configured_api",
+            "reference": "Configured Windows image channel"
+          },
+          "prompt": {
+            "path": "assets/candidates/v3/prompts/L01-S08A-api-r2.md",
+            "version": "L01-S08A-api-r2",
+            "sha256": "db19bafc09f445a41e291ca5a797a5195baa152d477c02bcccdf1be69f42d5c0"
+          },
+          "quality": {
+            "rating": "accept",
+            "reason": "两个平方上标位置正确，未展示答案。边缘笔记本与空提示框属装饰差异。"
+          },
+          "dimensions": {
+            "width_px": 2048,
+            "height_px": 1152
+          }
+        }
+      ],
+      "adopted_candidate_id": "L01-S08A-api-r2",
+      "qa": {
+        "facts": "passed",
+        "text": "passed",
+        "visual": "passed"
+      },
+      "speaker": {
+        "seconds": 15,
+        "keywords": [
+          "课后作业",
+          "巩固练习（选做）"
+        ],
+        "idea": "课后选做这道题，先找公因式，再写成积，最后用展开进行检验。今天的学习就到这里。",
+        "transition": "结束试讲",
+        "notes_text": "课后作业｜巩固练习（选做）｜预算 15 秒。\n课后选做这道题，先找公因式，再写成积，最后用展开进行检验。今天的学习就到这里。\n\nE06 备课答案：5mn(2m－3n)。"
+      },
+      "selection": {
+        "adopted": {
+          "id": "L01-S08A-api-r2",
+          "sha256": "551d7fb7afe5039d349529f41f79ea7abaf454ae72abb5006571368619801cff",
+          "lane": "configured_api"
+        },
+        "reason": "两个平方上标位置正确，未展示答案。边缘笔记本与空提示框属装饰差异。",
+        "reviews": [
+          {
+            "id": "L01-S08A-api-r2",
+            "page_id": "L01-S08A",
+            "sha256": "551d7fb7afe5039d349529f41f79ea7abaf454ae72abb5006571368619801cff",
+            "passed": true,
+            "adopted": true,
+            "findings": "两个平方上标位置正确，未展示答案。边缘笔记本与空提示框属装饰差异。",
+            "reviewer": "Codex visual review",
+            "reviewed_at": "2026-11-18T01:52:02.215Z"
+          }
+        ]
+      },
+      "final_render": {
+        "path": "assets/final-renders/v3/15-L01-巩固练习（选做）.png",
+        "sha256": "97eeb00f5724602031c67a8ac08c1efac6d86411b2b49051c5f2f02f19886375",
+        "qa": {
+          "facts": "passed",
+          "text": "passed",
+          "visual": "passed"
+        },
+        "reviewed": true,
+        "reviewer": "Codex visual review",
+        "reviewed_at": "2026-11-18T09:55:45.878368+08:00",
         "projection": {
           "width_px": 1920,
           "height_px": 1080

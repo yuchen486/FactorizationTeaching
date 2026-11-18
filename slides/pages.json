@@ -1,171 +1,263 @@
 [
   {
     "page_id": "L01-S01A",
-    "title": "简便计算",
-    "text": [
-      "25×7＋25×3",
-      "怎样计算更简便？"
-    ],
+    "title": "怎样算更快？",
     "seconds": 30,
-    "prompt_path": "slides/prompts/L01-S01A.md",
-    "script": "同学们，请看这道计算题：25乘7加25乘3。先想一想，怎样算更简便？【停顿5秒】我们可以先把7和3相加，再乘25，结果是250。",
-    "segment": 1
+    "segment": 1,
+    "text": [
+      "课前导入",
+      "怎样算更快？",
+      "每盒装 25 支笔",
+      "第一组 7 盒　第二组 3 盒",
+      "25 × 7 + 25 × 3",
+      "你会先算什么？"
+    ],
+    "script": "同学们，假设每盒装 25 支笔，第一组有 7 盒，第二组有 3 盒。请看这道计算题：25乘7加25乘3。想一想，怎样算更简便？【停顿5秒】观察两项中有没有相同的数。",
+    "start_seconds": 0,
+    "prompt_path": "assets/candidates/v3/prompts/L01-S01A-api-r1.md",
+    "phase": "课前导入"
   },
   {
     "page_id": "L01-S01B",
-    "title": "简便计算",
-    "text": [
-      "25×7＋25×3＝25×(7＋3)＝250",
-      "共同的25可以提出来"
-    ],
+    "title": "先合并盒数",
     "seconds": 30,
-    "prompt_path": "slides/prompts/L01-S01B.md",
-    "script": "这里用了乘法分配律。观察算式，两项中都有什么？【预设：25】我们把共同的25提到括号外，括号里面留下7加3。接下来，把这样的想法用到含字母的式子中。",
-    "segment": 1
+    "segment": 1,
+    "text": [
+      "课前导入",
+      "先合并盒数",
+      "25 × 7 + 25 × 3",
+      "= 25 × (7 + 3)",
+      "= 250",
+      "两组每盒都是 25 支，可以先把盒数相加。"
+    ],
+    "script": "两项中都有25。用乘法分配律，可以先把7和3相加，再乘25，得到250。我们把共同的25提到括号外。接下来，把这样的想法用到含字母的式子中。",
+    "start_seconds": 30,
+    "prompt_path": "assets/candidates/v3/prompts/L01-S01B-api-r2.md",
+    "phase": "课前导入"
   },
   {
     "page_id": "L01-S02A",
-    "title": "因式分解的方向",
-    "text": [
-      "a(b＋c)＝ab＋ac",
-      "怎样把右边重新写成积？"
-    ],
+    "title": "从积到和",
     "seconds": 40,
-    "prompt_path": "slides/prompts/L01-S02A.md",
-    "script": "我们已经会用乘法分配律展开：a乘括号b加c，得到ab加ac。这是由积写成和。现在请反过来看：ab加ac中，每一项都有因式a。能把它写回一个积吗？【停顿5秒】可以写成a乘括号b加c。",
-    "segment": 2
+    "segment": 2,
+    "text": [
+      "概念探究",
+      "从积到和",
+      "a(b + c) = ab + ac",
+      "展开：把整式的积写成多项式。",
+      "右边能重新写成积吗？"
+    ],
+    "script": "我们已经会用乘法分配律展开：a乘括号b加c，得到ab加ac。这是由积写成和。现在请反过来看：能把右边重新写成积吗？【停顿5秒】",
+    "start_seconds": 60,
+    "prompt_path": "assets/candidates/v3/prompts/L01-S02A-api-r1.md",
+    "phase": "概念探究"
   },
   {
     "page_id": "L01-S02B",
-    "title": "因式分解的方向",
-    "text": [
-      "ab＋ac＝a(b＋c)",
-      "把一个多项式化为几个整式的积，叫作因式分解"
-    ],
+    "title": "从和到积",
     "seconds": 50,
-    "prompt_path": "slides/prompts/L01-S02B.md",
-    "script": "把一个多项式化为几个整式的积，叫作因式分解，也叫分解因式。请比较两个方向：展开时由积到和，因式分解时由和到积。注意，结果整体要写成积，每个因式都是整式。今天我们学习其中一种方法：提公因式法。",
-    "segment": 2
+    "segment": 2,
+    "text": [
+      "概念探究",
+      "从和到积",
+      "ab + ac = a(b + c)",
+      "把一个多项式化成几个整式的积，叫作因式分解。",
+      "观察：两项都含有 a。"
+    ],
+    "script": "ab加ac的每一项都有因式a，可以写成a乘括号b加c。把一个多项式化成几个整式的积，叫作因式分解，也叫分解因式。【左栏板书】展开是由积到和，因式分解是由多项式写成积。今天我们学习提公因式法。",
+    "start_seconds": 100,
+    "prompt_path": "assets/candidates/v3/prompts/L01-S02B-api-r1.md",
+    "phase": "概念探究"
   },
   {
     "page_id": "L01-S03A",
-    "title": "公因式",
-    "text": [
-      "6x²＋9x",
-      "两项共同含有什么因式？"
-    ],
+    "title": "从两条线索入手",
     "seconds": 40,
-    "prompt_path": "slides/prompts/L01-S03A.md",
-    "script": "请看6x的平方加9x。先观察系数6和9，它们的最大公因数是多少？【预设：3】再看字母，两项都有x，共同部分取最低次数，是x。因此，可以选3x作为公因式。",
-    "segment": 3
+    "segment": 3,
+    "text": [
+      "识别公因式",
+      "从两条线索入手",
+      "6x² + 9x",
+      "看系数：6 和 9 的最大公因数是多少？",
+      "看字母：x² 和 x 的公共部分是什么？"
+    ],
+    "script": "请看6x的平方加9x。先观察系数6和9，它们的最大公因数是多少？再比较x的平方和x，共同的字母部分是什么？【停顿】",
+    "start_seconds": 150,
+    "prompt_path": "assets/candidates/v3/prompts/L01-S03A-api-r1.md",
+    "phase": "识别公因式"
   },
   {
     "page_id": "L01-S03B",
-    "title": "公因式",
-    "text": [
-      "6x²＝3x·2x",
-      "9x＝3x·3",
-      "公因式：3x"
-    ],
+    "title": "公因式是 3x",
     "seconds": 50,
-    "prompt_path": "slides/prompts/L01-S03B.md",
-    "script": "公因式是多项式各项都含有的因式。我们可以把6x的平方写成3x乘2x，把9x写成3x乘3。请看，两项中相同的3x就清楚地出现了。【板书并停顿】确定公因式时，系数取最大公因数，相同字母取最低次数。本节练习的系数都是整数。",
-    "segment": 3
+    "segment": 3,
+    "text": [
+      "识别公因式",
+      "公因式是 3x",
+      "6 和 9 的最大公因数是 3",
+      "公共字母 x 取最低次数",
+      "6x² = 3x · 2x",
+      "9x = 3x · 3"
+    ],
+    "script": "【预设：最大公因数是3，共同的字母部分是x】相同字母取最低次数，所以本例提出3x。6x的平方等于3x乘2x，9x等于3x乘3。【中栏板书并停顿】本节练习按整系数多项式组织。",
+    "start_seconds": 190,
+    "prompt_path": "assets/candidates/v3/prompts/L01-S03B-api-r2.md",
+    "phase": "识别公因式"
   },
   {
     "page_id": "L01-S04A",
-    "title": "提取与检验",
-    "text": [
-      "6x²＋9x＝3x·2x＋3x·3",
-      "括号里应留下什么？"
-    ],
+    "title": "逐项求商",
     "seconds": 60,
-    "prompt_path": "slides/prompts/L01-S04A.md",
-    "script": "现在把两项共同的3x提出来。第一项6x的平方等于3x乘2x，所以括号里第一项是2x。第二项9x等于3x乘3，所以括号里第二项是3。两项之间原来是加号，括号里仍然是加号。这样得到3x乘括号2x加3。",
-    "segment": 4
+    "segment": 4,
+    "text": [
+      "例题示范",
+      "逐项求商",
+      "6x² + 9x",
+      "第一项：6x² ÷ 3x",
+      "第二项：9x ÷ 3x",
+      "提出 3x 后，括号里留下哪两项？"
+    ],
+    "script": "把两项拆开看。6x的平方除以3x，商是2x；9x除以3x，商是3。【板书拆写过程】两项之间是加号。共同提出3x，括号里留下什么？【停顿5秒】",
+    "start_seconds": 240,
+    "prompt_path": "assets/candidates/v3/prompts/L01-S04A-api-r2.md",
+    "phase": "例题示范"
   },
   {
     "page_id": "L01-S04B",
-    "title": "提取与检验",
+    "title": "写成积，再乘回",
+    "seconds": 75,
+    "segment": 4,
     "text": [
-      "6x²＋9x＝3x(2x＋3)",
-      "检验：3x(2x＋3)＝6x²＋9x"
+      "例题示范",
+      "写成积，再乘回",
+      "6x² + 9x = 3x(2x + 3)",
+      "检验：3x(2x + 3) = 6x² + 9x",
+      "括号里的每一项，都要乘回 3x。"
     ],
-    "seconds": 90,
-    "prompt_path": "slides/prompts/L01-S04B.md",
-    "script": "【停顿并完成板书】请想一想，括号里的2x和3是凭什么确定的？【停顿5秒，预设：分别与3x相乘，能还原原来的两项】很好，我们是逐项确定剩下的因式。最后还要检验。用分配律乘回去，3x乘2x得到6x的平方，3x乘3得到9x，正好还原原式。提公因式法就是逆用乘法分配律。我们一起整理：先找公因式，再逐项确定商式，最后乘回检验。【指板书复述，并留出观察时间】",
-    "segment": 4
+    "script": "【预设：2x加3】得到3x乘括号2x加3。【完成板书】用分配律乘回去，3x乘2x得到6x的平方，3x乘3得到9x，正好还原原式。括号内的每一项都对应原式的一项。【停顿，指板书复述】",
+    "start_seconds": 300,
+    "prompt_path": "assets/candidates/v3/prompts/L01-S04B-api-r2.md",
+    "phase": "例题示范"
   },
   {
     "page_id": "L01-S05A",
-    "title": "商式中的1",
-    "text": [
-      "待判断：3x²＋3x＝3x·x",
-      "展开右边，能还原原式吗？"
-    ],
+    "title": "括号里漏了什么？",
     "seconds": 40,
-    "prompt_path": "slides/prompts/L01-S05A.md",
-    "script": "有位同学写出这样一个结果：3x的平方加3x，等于3x乘x。这是一个待判断的式子。请用刚才的办法检验。【停顿5秒】右边乘回去，只有3x的平方，原来的加3x没有了。",
-    "segment": 5
+    "segment": 5,
+    "text": [
+      "易错辨析",
+      "括号里漏了什么？",
+      "待判断",
+      "3x² + 3x = 3x · x",
+      "请展开右边，和原式逐项比较。"
+    ],
+    "script": "请看一个待判断的解法。3x的平方加3x，被写成了3x乘x。右边展开能还原左边吗？【停顿5秒】你能指出少了哪一项吗？",
+    "start_seconds": 375,
+    "prompt_path": "assets/candidates/v3/prompts/L01-S05A-api-r1.md",
+    "phase": "易错辨析"
   },
   {
     "page_id": "L01-S05B",
-    "title": "商式中的1",
-    "text": [
-      "3x²＋3x＝3x(x＋1)",
-      "因为3x＝3x·1，括号中的1要保留"
-    ],
+    "title": "保留括号里的 1",
     "seconds": 50,
-    "prompt_path": "slides/prompts/L01-S05B.md",
-    "script": "问题出在哪里？因为原式第二项3x等于3x乘1，提出3x以后，括号里对应的是1。正确结果是3x乘括号x加1。【板书并圈出1】当某一项与公因式相同时，剩下的因式是1。请再展开一次，确认两项都能还原。",
-    "segment": 5
+    "segment": 5,
+    "text": [
+      "易错辨析",
+      "保留括号里的 1",
+      "3x = 3x · 1",
+      "3x² + 3x = 3x(x + 1)",
+      "当某项等于公因式时，商是 1。"
+    ],
+    "script": "右边展开只有3x的平方，少了3x。第二项3x等于3x乘1，提出3x以后，括号里对应的是1。正确结果是3x乘括号x加1。【板书并圈出1，再乘回核对】",
+    "start_seconds": 415,
+    "prompt_path": "assets/candidates/v3/prompts/L01-S05B-api-r2.md",
+    "phase": "易错辨析"
   },
   {
     "page_id": "L01-S06A",
-    "title": "当堂检测",
-    "text": [
-      "分解因式：8a²－12a",
-      "先找公因式，再写结果并检验"
-    ],
+    "title": "独立试一试",
     "seconds": 50,
-    "prompt_path": "slides/prompts/L01-S06A.md",
-    "script": "现在请独立完成一道题：分解因式8a的平方减12a。先想共同的系数，再看相同的字母。【独立思考与书写20秒】公因式可以选4a。8a的平方等于4a乘2a，12a等于4a乘3，所以结果是4a乘括号2a减3。",
-    "segment": 6
+    "segment": 6,
+    "text": [
+      "当堂检测",
+      "独立试一试",
+      "分解因式：8a² − 12a",
+      "先找公因式，再写成整式的积。",
+      "完成后，用展开检查。"
+    ],
+    "script": "请独立分解8a的平方减12a。先找公因式，再写成积并展开检验。【独立思考与书写约20秒】",
+    "start_seconds": 465,
+    "prompt_path": "assets/candidates/v3/prompts/L01-S06A-api-r1.md",
+    "phase": "当堂检测"
   },
   {
     "page_id": "L01-S06B",
-    "title": "当堂检测",
-    "text": [
-      "8a²－12a＝4a(2a－3)",
-      "检验：4a(2a－3)＝8a²－12a"
-    ],
+    "title": "留住括号里的负号",
     "seconds": 30,
-    "prompt_path": "slides/prompts/L01-S06B.md",
-    "script": "请注意括号里的减号。把它乘回去，是否等于原式？【停顿5秒】如果你的结果相同，并且能乘回检验，这道题就完成了。",
-    "segment": 6
+    "segment": 6,
+    "text": [
+      "当堂检测",
+      "留住括号里的负号",
+      "8a² − 12a = 4a(2a − 3)",
+      "检验：4a(2a − 3) = 8a² − 12a",
+      "第二项的商是 −3，负号要保留。"
+    ],
+    "script": "公因式是4a。两项分别除以4a，得到2a和负3。写成4a乘括号2a减3，乘回去恰好还原原式。【右栏板书结果】",
+    "start_seconds": 515,
+    "prompt_path": "assets/candidates/v3/prompts/L01-S06B-api-r2.md",
+    "phase": "当堂检测"
   },
   {
     "page_id": "L01-S07A",
-    "title": "课堂归纳",
-    "text": [
-      "提公因式法的关键是什么？",
-      "怎样确认结果正确？"
-    ],
+    "title": "用自己的话说一遍",
     "seconds": 20,
-    "prompt_path": "slides/prompts/L01-S07A.md",
-    "script": "今天我们把乘法分配律反过来使用，学习了提公因式法。请看板书，回想三个动作：找公因式，逐项确定商式，乘回检验。",
-    "segment": 7
+    "segment": 7,
+    "text": [
+      "课堂小结",
+      "用自己的话说一遍",
+      "怎样找公因式？",
+      "括号里的各项从哪里来？",
+      "怎样检查有没有漏项？"
+    ],
+    "script": "【指向黑板中栏】提公因式法怎样做？最后怎么检查没有漏项？【停顿】",
+    "start_seconds": 545,
+    "prompt_path": "assets/candidates/v3/prompts/L01-S07A-api-r1.md",
+    "phase": "课堂小结"
   },
   {
     "page_id": "L01-S07B",
-    "title": "课堂归纳",
-    "text": [
-      "找公因式　逐项确定商式　乘回检验",
-      "某一项等于公因式时，商式中的1要保留"
-    ],
+    "title": "提公因式法三步",
     "seconds": 20,
-    "prompt_path": "slides/prompts/L01-S07B.md",
-    "script": "还要特别留意：当某一项就是公因式时，剩下的1要保留。课后请完成备选题10m的平方n减15mn的平方，并用展开检验自己的结果。这节课就到这里。",
-    "segment": 7
+    "segment": 7,
+    "text": [
+      "课堂小结",
+      "提公因式法三步",
+      "找公因式",
+      "逐项求商写成积",
+      "乘回检验",
+      "某项等于公因式时，商 1 要留在括号里。"
+    ],
+    "script": "先找公因式，再逐项相除写成积，最后乘回检验。某项等于公因式时，商是1，要留在括号里。【完成底栏板书】",
+    "start_seconds": 565,
+    "prompt_path": "assets/candidates/v3/prompts/L01-S07B-api-r2.md",
+    "phase": "课堂小结"
+  },
+  {
+    "page_id": "L01-S08A",
+    "title": "巩固练习（选做）",
+    "seconds": 15,
+    "script": "课后选做这道题，先找公因式，再写成积，最后用展开进行检验。今天的学习就到这里。",
+    "teacher_only": "E06 备课答案：5mn(2m－3n)。",
+    "segment": 8,
+    "text": [
+      "课后作业",
+      "巩固练习（选做）",
+      "分解因式：10m²n − 15mn²",
+      "找出公因式，写成整式的积。",
+      "最后用展开检验。"
+    ],
+    "start_seconds": 585,
+    "prompt_path": "assets/candidates/v3/prompts/L01-S08A-api-r2.md",
+    "phase": "课后作业"
   }
 ]

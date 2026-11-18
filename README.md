@@ -17,8 +17,10 @@
 |逐字稿|[Markdown](lesson-plans/L01-script.md)|[阅读打印](docs/script.html)|
 |教学设计|[教案](lesson-plans/L01-lesson-plan.md)|[阅读打印](docs/lesson.html)|
 |板书|[SVG](board-design/L01-board.svg)|[逐步板书](docs/board.html)|
-|课件|[文案](slides/pages.json)、[提示词](slides/prompts/)|[HTML 课件](docs/slides.html)、[PPTX](outputs/L01-课件.pptx)|
+|课件|[逐页分镜](slides/L01-storyboard.md)、[文案与插图设计](slides/L01-api-v3.json)|[HTML 课件](docs/slides.html)、[PPTX](outputs/L01-课件.pptx)|
 |练习|[题目与答案](exercises/L01-exercises.md)|E01—E05 课堂练习，E06 课后练习|
+
+课件共 15 页。每页左上角标明教学环节，最后 15 秒用于 E06 选做作业。PPTX 和 HTML 使用同一组整页图片。[成图与验收记录](assets/records/baseline-v3.md)
 
 ## 仓库结构
 

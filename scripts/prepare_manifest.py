@@ -1,20 +1,125 @@
-"""Record the exact adopted bytes after visual review; prepare official packager input."""
-import datetime,hashlib,json,pathlib
+"""Record visually reviewed page images and emit the image-first packager inputs."""
+
+import hashlib
+import json
+from pathlib import Path
+
 from PIL import Image
-R=pathlib.Path(__file__).resolve().parents[1]
-def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
-pages=json.loads((R/'slides/pages.json').read_text(encoding='utf-8'))
-native=json.loads((R/'assets/native-generation.json').read_text(encoding='utf-8'))
-manifest={'schema_version':1,'project':{'id':'L01','title':'因式分解——提公因式法入门','target_seconds':600,'timing_tolerance_seconds':0,'generation_policy':{'mode':'single_requested','required_lanes':['configured_api','native_imagegen'],'single_lane_reason':'Approved API main with automatic native fallback. API candidates rejected after formula/text inspection.'}},'pages':[]}
-for n,p in enumerate(pages,1):
- pid=p['page_id'];source=R/f'assets/slides/{pid}.png';im=Image.open(source);im.verify();im=Image.open(source)
- assert abs(im.width/im.height-16/9)/(16/9)<.002,(pid,im.size)
- prompt=f'slides/prompts/{pid}-native-v1.md';(R/prompt).write_text(native[pid]['prompt'],encoding='utf-8',newline='\n')
- notes=f"{p['title']}｜预算{p['seconds']}秒。\n{p['script']}\n本画面文字："+'；'.join(p['text'])+'\n教材依据：沪科版七下8.4，第80—82页，国家中小学智慧教育平台。'
- c={'id':pid+'-native','project_id':'L01','status':'adopted','path':source.relative_to(R).as_posix(),'sha256':sha(source),'source':{'kind':'native_imagegen','reference':native[pid]['path']},'prompt':{'path':prompt,'version':'native-v1','sha256':sha(R/prompt)},'quality':{'rating':'accept','reason':'逐字目视检查中文、公式、符号、画幅与清晰度'},'dimensions':{'width_px':im.width,'height_px':im.height}}
- manifest['pages'].append({'page_number':n,'page_id':pid,'project_id':'L01','status':'adopted','topic':p['title'],'visible_text':[p['title']]+p['text'],'evidence':[{'reference':'exercises/L01-exercises.md','supports':'原创题目、答案及数学检验'}],'candidates':[c],'adopted_candidate_id':c['id'],'qa':{'facts':'passed','text':'passed','visual':'passed'},'speaker':{'seconds':p['seconds'],'keywords':[p['title']],'idea':p['script'],'transition':'进入本环节反馈' if n%2 else '进入下一教学环节' if n<14 else '课堂结束','notes_text':notes}})
-(R/'slides/manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8',newline='\n')
-cards=['# L01 讲者提示卡\n\n14个状态共600秒，同一环节完整逐字稿只讲一次，按画面内容推进。\n']
-for p in pages:cards.append(f"## {p['page_id']} {p['title']} · {p['seconds']}秒\n\n画面："+'；'.join(p['text'])+'\n\n讲述：'+p['script']+'\n')
-(R/'outputs/L01-提示卡.md').write_text('\n'.join(cards),encoding='utf-8',newline='\n')
-print('Manifest prepared:',sum(p['speaker']['seconds'] for p in manifest['pages']))
+
+ROOT = Path(__file__).resolve().parents[1]
+PAGES = ROOT / "slides/pages.json"
+ALL_PASSED = {"facts": "passed", "text": "passed", "visual": "passed"}
+
+
+def sha(path):
+    return hashlib.sha256((ROOT / path).read_bytes()).hexdigest()
+
+
+def candidate(pid, suffix, path, source, prompt, version, reason, status):
+    with Image.open(ROOT / path) as picture:
+        width, height = picture.size
+        picture.verify()
+    return {
+        "id": f"{pid}-{suffix}",
+        "project_id": "L01",
+        "status": status,
+        "path": path,
+        "sha256": sha(path),
+        "source": source,
+        "prompt": {"path": prompt, "version": version, "sha256": sha(prompt)},
+        "quality": {"rating": "accept", "reason": reason},
+        "dimensions": {"width_px": width, "height_px": height},
+    }
+
+
+def main():
+    pages = json.loads(PAGES.read_text(encoding="utf-8"))
+    if any("phase" in page for page in pages):
+        raise SystemExit("For the API edition use stage_api_deck.py and publish_api_deck.py.")
+    manifest = {
+        "schema_version": 1,
+        "project": {
+            "id": "L01",
+            "title": "因式分解——提公因式法入门",
+            "target_seconds": 600,
+            "timing_tolerance_seconds": 0,
+            "generation_policy": {
+                "mode": "local_typesetting_with_dual_lane_sample",
+                "required_lanes": ["native_imagegen", "web_chatgpt"],
+                "candidates_per_page_per_lane": 1,
+                "budget_reason": "两条图像生成链路用于 S08A 样张。全套采用本地排版，共用公式字体和对齐规则。",
+            },
+        },
+        "pages": [],
+    }
+    cards = ["# L01 讲者提示卡\n\n15 个状态共 600 秒。\n"]
+    for number, page in enumerate(pages, 1):
+        pid = page["page_id"]
+        visible = page["text"]
+        notes = page["script"]
+        if page.get("teacher_only"):
+            notes += "\n\n" + page["teacher_only"]
+        adopted = candidate(
+            pid, "typeset-v2", f"assets/slides/{pid}.png",
+            {"kind": "local_typesetting", "reference": "scripts/render_slide_images.py + slides/pages.json"},
+            page["prompt_path"], "v2",
+            "逐字比对更新包的画面文案、数学符号和字号，并核对整套版式。", "adopted",
+        )
+        entry = {
+            "page_number": number, "page_id": pid, "project_id": "L01",
+            "status": "adopted", "topic": page["title"], "visible_text": visible,
+            "evidence": [{"reference": "slides/L01-detailed-design-v2.md", "supports": "逐页文字与节奏"}],
+            "candidates": [adopted], "adopted_candidate_id": adopted["id"], "qa": ALL_PASSED,
+            "speaker": {
+                "seconds": page["seconds"], "keywords": [page["title"]],
+                "idea": page["script"],
+                "transition": "进入下一画面" if number < len(pages) else "结束试讲",
+                "notes_text": f"{page['title']}｜预算 {page['seconds']} 秒。\n{notes}",
+            },
+        }
+        if number == 1:
+            entry["evidence"].append({
+                "reference": "assets/branding/huainan-normal-university.png",
+                "supports": "从用户修改版 PPTX 首页嵌入对象提取的院校标识",
+            })
+        if pid == "L01-S08A":
+            gen_prompt = "slides/prompts/L01-S08A-candidate-v2.md"
+            specifications = [
+                ("chrome", "web_chatgpt", "https://chatgpt.com/c/6afcf6c0-d274-83e8-ad89-1a68ea3a4e0b",
+                 "公式与三项要求正确，题目字重和双色分隔线与整套排版不同。",
+                 "2026-11-18T00:52:14.741Z", "2026-11-18T00:55:19.690Z"),
+                ("native", "native_imagegen", "exec-b5b3ecd4-4b1c-4a48-b13c-984315b58c0b.png",
+                 "公式与三项要求正确，公式行更宽，双分隔线和题头纵向位置有变化。",
+                 "2026-11-18T00:52:33.672Z", "2026-11-18T00:53:02.520Z"),
+            ]
+            compared = []
+            for suffix, lane, reference, reason, submitted, completed in specifications:
+                alternate = candidate(pid, suffix, f"assets/candidates/v2/{pid}-{suffix}.png",
+                                      {"kind": lane, "reference": reference}, gen_prompt,
+                                      "candidate-v2", reason, "verified")
+                alternate.update(lane=lane, page_id=pid, qa=ALL_PASSED, generation={
+                    "task_status": "downloaded",
+                    "submitted_at": submitted,
+                    "completed_at": completed,
+                    "completed_at_kind": "first_observation" if suffix == "chrome" else "tool_return",
+                })
+                entry["candidates"].append(alternate)
+                compared.append({"id": alternate["id"], "lane": lane, "sha256": alternate["sha256"],
+                                 "prompt_sha256": alternate["prompt"]["sha256"], "qa_result": "passed",
+                                 "reason": reason})
+            entry["selection"] = {
+                "status": "compared", "compared_candidates": compared,
+                "adopted": {"id": adopted["id"], "lane": "local_typesetting", "sha256": adopted["sha256"]},
+                "reason": "本地版沿用前页字号、题头和公式基线，教学文案与公式由审定文本直接排版。",
+                "deck_style_consistency": "与全套 1920×1080 页面共用排版源。",
+            }
+        manifest["pages"].append(entry)
+        cards.append(f"## {pid} {page['title']} · {page['seconds']} 秒\n\n{notes}\n")
+    (ROOT / "slides/manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
+                                               encoding="utf-8", newline="\n")
+    (ROOT / "outputs/L01-提示卡.md").write_text("\n".join(cards), encoding="utf-8", newline="\n")
+    print(f"Prepared manifest for {len(pages)} pages.")
+
+
+if __name__ == "__main__":
+    main()
