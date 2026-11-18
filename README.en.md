@@ -1,6 +1,6 @@
 # Factorization in Ten Minutes
 
-[中文](README.md) · [Live site](https://yuchen486.github.io/FactorizationTeaching/)
+[中文](README.md) · [Live site](https://yuchen486.github.io/FactorizationTeaching/) · [Reuse guide](REUSE.md#english) · [Agent index](llms.txt)
 
 ![Overview of the Factorization in Ten Minutes static site](assets/pages-overview.png)
 
@@ -19,6 +19,20 @@ A complete teaching-resource package for a mathematics-teaching methods course. 
 |Board design|[SVG](board-design/L01-board.svg)|[Step-by-step board](docs/board.html)|
 |Slides|[Storyboard](slides/L01-storyboard.md), [copy and illustration plan](slides/L01-api-v3.json)|[HTML slides](docs/slides.html), [PPTX](outputs/L01-课件.pptx)|
 |Exercises|[Questions and answers](exercises/L01-exercises.md)|E01–E05 in-class, E06 after-class|
+
+The lesson has 15 slides. Each identifies its teaching phase, and the final 15 seconds introduce the optional E06 assignment. The PowerPoint and web player use the same slide images. [Production and verification record](assets/records/baseline-v3.md)
+
+## Watch the board build up
+
+![Recorded walkthrough of the interactive board, from a blank board to the worked example, practice and summary](assets/showcase/board-walkthrough.gif)
+
+Advance through 11 states. The interface and teaching materials are in Chinese. [Interactive board](https://yuchen486.github.io/FactorizationTeaching/board.html) · [Final-state screenshot](assets/showcase/board-final.png)
+
+## Use it in your classroom
+
+- Rehearse with the [teaching script](lesson-plans/L01-script.md) and the web player. The player supports keyboard navigation, fullscreen mode and PowerPoint download.
+- To adapt the lesson, use the [reuse guide](REUSE.md#english) to update exercises, timing, slide copy, notes and board states together.
+- When using an agent, share this repository and point it to [llms.txt](llms.txt) and [AGENTS.md](AGENTS.md). Useful search terms include grade 7 algebra, factoring polynomials, greatest common factor, microteaching and progressive board design.
 
 ## Repository layout
 

@@ -1,5 +1,11 @@
 # 本项目工作约定
 
+## Agent 检索入口
+
+- 项目速览见 [llms.txt](llms.txt)，教师与维护者的复用路径见 [REUSE.md](REUSE.md)。
+- 先读练习、时间表与逐字稿，再读 `slides/pages.json` 和板书源。按教学环节或 E01–E06 回答，并链接相应来源。
+- 公开演示入口为 [GitHub Pages](https://yuchen486.github.io/FactorizationTeaching/)，本地入口为 `docs/index.html`。复用时保留原作者署名与 [CC BY-NC-SA 4.0](LICENSE) 的许可条款。
+
 ## 项目定位
 
 - 为师范生“教学方法”课程作业制作中学数学“因式分解”讲课材料。

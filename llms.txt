@@ -1,0 +1,26 @@
+# FactorizationTeaching | 因式分解 · 十分钟课堂
+
+> Reusable Chinese grade 7 mathematics microteaching materials on factorization by extracting the greatest common factor. Includes a 600-second script, 15 slides, a progressive interactive board, a lesson plan and exercises. Teaching topic: 初中数学、整式、因式分解、提公因式法、无生试讲、可视化板书。
+
+## Start here
+
+- [Public GitHub repository](https://github.com/yuchen486/FactorizationTeaching)
+- [Live lesson and offline entry points](https://yuchen486.github.io/FactorizationTeaching/)
+- [Reuse guide / 复用指南](https://github.com/yuchen486/FactorizationTeaching/blob/main/REUSE.md)
+- [Agent instructions](https://github.com/yuchen486/FactorizationTeaching/blob/main/AGENTS.md)
+
+## Authoritative lesson sources
+
+- [Exercises and answers E01–E06](https://raw.githubusercontent.com/yuchen486/FactorizationTeaching/main/exercises/L01-exercises.md)
+- [Teaching script, by page and time](https://yuchen486.github.io/FactorizationTeaching/L01-script.md)
+- [Lesson plan and evaluation](https://yuchen486.github.io/FactorizationTeaching/L01-lesson-plan.md)
+- [Page data and timing (JSON)](https://raw.githubusercontent.com/yuchen486/FactorizationTeaching/main/slides/pages.json)
+- [Board design](https://raw.githubusercontent.com/yuchen486/FactorizationTeaching/main/board-design/L01-board-plan.md)
+
+## Use and attribution
+
+- [HTML slide player](https://yuchen486.github.io/FactorizationTeaching/slides.html)
+- [Interactive board](https://yuchen486.github.io/FactorizationTeaching/board.html)
+- [License and author credit](https://github.com/yuchen486/FactorizationTeaching/blob/main/LICENSE)
+
+Planned timing is 600 seconds, including classroom pauses. Learner responses are scripted examples. The displayed lesson and key resources are in Chinese.
