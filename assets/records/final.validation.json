@@ -1,7 +1,7 @@
 {
   "schemaVersion": "presentation-finalization.v1",
-  "finalSha256": "5148366bffee46f0097f219799cde0362c791c7e54cefef821e14331527b34b2",
-  "byteCount": 696339,
+  "finalSha256": "2ee7f0206a05fee70b17fd3fc6e72ad8c642d6c78116351e2384e08c4c0c6faf",
+  "byteCount": 25356178,
   "packageIntegrity": {
     "chart_count": 0,
     "claim_boundary": "Structural package checks only; no slide text, notes, formulas, chart values, or native PowerPoint execution were inspected.",
@@ -39,7 +39,7 @@
     "performed": true,
     "passed": true,
     "slideCount": 15,
-    "sha256": "5148366bffee46f0097f219799cde0362c791c7e54cefef821e14331527b34b2",
+    "sha256": "2ee7f0206a05fee70b17fd3fc6e72ad8c642d6c78116351e2384e08c4c0c6faf",
     "runtimeNodeModules": "C:\\Program Files\\WindowsApps\\OpenAI.CodexPrimaryRuntime.v26-1116-1220-0_26.1116.1220.0_x64__3k8sg7r9htsxt\\dependencies\\node\\node_modules",
     "nodeExecutable": "C:\\Program Files\\WindowsApps\\OpenAI.CodexPrimaryRuntime.v26-1116-1220-0_26.1116.1220.0_x64__3k8sg7r9htsxt\\dependencies\\node\\bin\\node.exe"
   },
@@ -67,7 +67,7 @@
     "native_chart_count": 0,
     "native_powerpoint_verified": false,
     "passed": true,
-    "presentation_sha256": "5148366bffee46f0097f219799cde0362c791c7e54cefef821e14331527b34b2",
+    "presentation_sha256": "2ee7f0206a05fee70b17fd3fc6e72ad8c642d6c78116351e2384e08c4c0c6faf",
     "schema_version": "presentation-native-chart-titles.v1",
     "slide_count": 15,
     "source_text_emitted": false,

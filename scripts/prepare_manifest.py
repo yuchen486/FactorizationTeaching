@@ -34,6 +34,8 @@ def candidate(pid, suffix, path, source, prompt, version, reason, status):
 
 def main():
     pages = json.loads(PAGES.read_text(encoding="utf-8"))
+    if any("phase" in page for page in pages):
+        raise SystemExit("For the API edition use stage_api_deck.py and publish_api_deck.py.")
     manifest = {
         "schema_version": 1,
         "project": {

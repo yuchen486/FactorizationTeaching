@@ -27,6 +27,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--build-dir", type=Path, required=True)
     parser.add_argument("--reviewed-all-pages", action="store_true", required=True)
+    parser.add_argument("--render-subdir", choices=("v3",))
     args = parser.parse_args()
     build = args.build_dir
     manifest = read_json(build / "manifest.with-final-renders.json")
@@ -40,6 +41,8 @@ def main():
         raise ValueError("Site verification did not pass.")
 
     render_dir = ROOT / "assets/final-renders"
+    if args.render_subdir:
+        render_dir /= args.render_subdir
     render_dir.mkdir(exist_ok=True)
     reviewed_at = datetime.datetime.now().astimezone().isoformat()
     for page in manifest["pages"]:

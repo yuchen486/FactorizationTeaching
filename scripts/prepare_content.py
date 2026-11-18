@@ -1,6 +1,9 @@
 """Build the static teaching materials from reviewed lesson content."""
 import json,pathlib
 R=pathlib.Path(__file__).resolve().parents[1]
+if (R/'slides/pages.json').exists():
+ if any('phase' in page for page in json.loads((R/'slides/pages.json').read_text(encoding='utf-8'))):
+  raise SystemExit('This script rebuilds the v2 typeset baseline. The API edition uses stage_api_deck.py.')
 def write(p,s):
  p=R/p;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(s,encoding='utf-8',newline='\n')
 segments = [

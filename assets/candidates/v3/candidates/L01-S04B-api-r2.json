@@ -1,0 +1,15 @@
+{
+  "id": "L01-S04B-api-r2",
+  "page_id": "L01-S04B",
+  "lane": "configured_api",
+  "model": "gpt-image-2.5",
+  "prompt": "assets/candidates/v3/prompts/L01-S04B-api-r2.md",
+  "prompt_sha256": "99c3d60f99000331e2cca98052ab71657081a20894441efb4f4b819bfb0ea8a9",
+  "status": "failed",
+  "submitted_at": "2026-11-18T01:42:52.120021+00:00",
+  "http_status": 0,
+  "transport_exit": 35,
+  "failed_at": "2026-11-18T01:43:03.547935+00:00",
+  "error_type": "ValueError",
+  "seconds": 11.44
+}
